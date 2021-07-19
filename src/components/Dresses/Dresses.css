@@ -1,0 +1,16 @@
+.dresses {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dresses__title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dresses__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+}

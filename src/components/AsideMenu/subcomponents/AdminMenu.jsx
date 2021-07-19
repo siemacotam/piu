@@ -10,7 +10,7 @@ const AdminMenu = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link className='aside-menu__link' to='menage-items'>zarządzanie towarem</Link>
+                        <Link to='/menage-items' className='aside-menu__link'>zarządzanie towarem</Link>
                     </li>
                 </ul>
             </nav>

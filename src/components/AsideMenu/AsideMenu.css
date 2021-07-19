@@ -4,7 +4,7 @@
     width: 100%;
     background-color: red;
     transform: translate(-100%);
-    transition: .5s;
+    transition: .3s;
 }
 
 .aside-menu__title {
@@ -32,4 +32,15 @@
     bottom: 5%;
     font-size: 30px;
     color: red;
+}
+
+
+@media (min-width: 700px) {
+	.aside-menu{
+        max-width: 20vw;
+        transform: translate(0%);
+    }
+    .aside-menu__burger {
+        display: none;
+    }
 }

@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import LoginForm from './LoginForm/LoginForm';
+import LoginForm from '../LoginForm/LoginForm';
 
-import { StoreContext } from '../store/StoreProvider';
+import { StoreContext } from '../../store/StoreProvider';
+import logo from '../../images/logo.png'
 
 import './Header.css'
 
@@ -23,8 +24,8 @@ const Header = () => {
 
     return ( 
         <header className='header'>
-            <div className='header__logo-wrapper'></div>
-            <h1 className='header__title'>Super sklep</h1>
+            <div className='header__logo-wrapper'><img src={logo} alt="" /> </div>
+            <h1 className='header__title'>Piu</h1>
             <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
             <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
         </header>

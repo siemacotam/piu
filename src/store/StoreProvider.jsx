@@ -1,4 +1,5 @@
 import React, { createContext, 
+    useEffect, 
     // useEffect,
     useState } from 'react';
 
@@ -103,6 +104,8 @@ const StoreProvider = ({children}) => {
     // useEffect(()=>{
     //     fetchData();
     // },[])
+
+    useEffect(() => {setDresses(dressesData)},[])
 
     return (
         <StoreContext.Provider value ={ {
