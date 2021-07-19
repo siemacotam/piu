@@ -5,6 +5,12 @@
     background-color: red;
     transform: translate(-100%);
     transition: .3s;
+    position: relative;
+}
+
+.aside-menu__nav-wrapper {
+    position: sticky;
+    top: 80px;
 }
 
 .aside-menu__title {
@@ -19,6 +25,7 @@
     background-color: blue;
     cursor: pointer;
 }
+
 
 .aside-menu__link:hover {
     background-color: yellow;

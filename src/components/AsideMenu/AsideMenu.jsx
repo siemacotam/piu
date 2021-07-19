@@ -20,10 +20,12 @@ const AsideMenu = () => {
 
     return ( 
         <>
-            <button className='aside-menu__burger' onClick ={showMenu}>M</button>
-            <section className='aside-menu' ref={sectionRef}>
-            <UserMenu isUserLogged={Boolean(user)} />
-            {adminMenuComponent}
+        <button className='aside-menu__burger' onClick ={showMenu}>M</button>
+        <section className='aside-menu' ref={sectionRef}>
+            <div className="aside-menu__nav-wrapper">
+                <UserMenu isUserLogged={Boolean(user)} />
+                {adminMenuComponent}
+            </div>
             <button className='aside-menu__burger' onClick ={hideMenu}>X</button>
         </section>
         </>
