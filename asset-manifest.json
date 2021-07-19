@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/siemacotam/piu/static/css/main.5749d3d2.chunk.css",
+    "main.js": "/siemacotam/piu/static/js/main.969bce40.chunk.js",
+    "main.js.map": "/siemacotam/piu/static/js/main.969bce40.chunk.js.map",
+    "runtime-main.js": "/siemacotam/piu/static/js/runtime-main.9f4c1c6f.js",
+    "runtime-main.js.map": "/siemacotam/piu/static/js/runtime-main.9f4c1c6f.js.map",
+    "static/js/2.3e47a754.chunk.js": "/siemacotam/piu/static/js/2.3e47a754.chunk.js",
+    "static/js/2.3e47a754.chunk.js.map": "/siemacotam/piu/static/js/2.3e47a754.chunk.js.map",
+    "index.html": "/siemacotam/piu/index.html",
+    "static/css/main.5749d3d2.chunk.css.map": "/siemacotam/piu/static/css/main.5749d3d2.chunk.css.map",
+    "static/js/2.3e47a754.chunk.js.LICENSE.txt": "/siemacotam/piu/static/js/2.3e47a754.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f4c1c6f.js",
+    "static/js/2.3e47a754.chunk.js",
+    "static/css/main.5749d3d2.chunk.css",
+    "static/js/main.969bce40.chunk.js"
+  ]
+}
