@@ -1,5 +1,5 @@
 {
-  "homepage": "",
+  "homepage": "https://siemacotam.github.io/piu/",
   "name": "moja-aplikacja",
   "version": "0.1.0",
   "private": true,
@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.14.5",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^2.0.1"
   }
 }
