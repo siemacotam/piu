@@ -15,7 +15,7 @@ const Content = () => {
     const isAdmin = user && user[0].accessLevel === ADMIN_TYPE;
 
     return ( 
-        <main className='.content'>
+        <main className='content'>
             <Switch>
                 <Route exact path='/' render={() => <Dresses />}></Route>
                 {isUserLogged && <Route exact path='/my-dresses' render={() => <p>siema</p>}></Route>}

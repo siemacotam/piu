@@ -8,6 +8,7 @@ import UserMenu from './subcomponents/UserMenu';
 const ADMIN_TYPE = 1
 
 const AsideMenu = () => {
+    const [flag , setFlag] = useState(true)
     const { user } = useContext(StoreContext);
     const adminMenuComponent = user && user[0].accessLevel === ADMIN_TYPE
     ? <AdminMenu />
@@ -15,18 +16,20 @@ const AsideMenu = () => {
 
     const sectionRef = useRef()
 
-    const showMenu = () => {sectionRef.current.style.transform= 'translate(0%)'}
-    const hideMenu = () => {sectionRef.current.style.transform= 'translate(-100%)'}
+    const showMenu = () => {sectionRef.current.style.transform= 'translate(0%)'; sectionRef.current.style.display= 'block'; setFlag(!flag)}
+    const hideMenu = () => {sectionRef.current.style.transform= 'translate(-100%)';sectionRef.current.style.display= 'block'; setFlag(!flag)}
 
     return ( 
         <>
-        <button className='aside-menu__burger' onClick ={showMenu}>M</button>
+        {flag ?
+        <button className='aside-menu__burger' onClick ={showMenu}>M</button>:
+        <button className='aside-menu__burger' onClick ={hideMenu}>X</button>
+        }
         <section className='aside-menu' ref={sectionRef}>
             <div className="aside-menu__nav-wrapper">
                 <UserMenu isUserLogged={Boolean(user)} />
                 {adminMenuComponent}
             </div>
-            <button className='aside-menu__burger' onClick ={hideMenu}>X</button>
         </section>
         </>
      );
