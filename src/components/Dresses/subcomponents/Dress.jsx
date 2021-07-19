@@ -7,12 +7,14 @@ const Dress = ({authors, img, price, title}) => {
     const allAuthors = authors.join(', ')
 
     return ( 
-        <article className='dress-card'>
-            <h3 className='dress-card__title'>{title}</h3>
-            <img className='dress-card__image' src={logo} alt={title} />
-            <p className='dress-card__price'>`koszt: ${price} zł`</p>
-            <p className='dress-card__authors'>{`Autorzy : ${allAuthors}`}</p>
-        </article>
+        <li>
+            <article className='dress-card'>
+                <h3 className='dress-card__title'>{title}</h3>
+                <img className='dress-card__image' src={logo} alt={title} />
+                <p className='dress-card__price'>`koszt: ${price} zł`</p>
+                <p className='dress-card__authors'>{`Autorzy : ${allAuthors}`}</p>
+            </article>
+        </li>
      );
 }
  
