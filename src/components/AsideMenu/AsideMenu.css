@@ -1,7 +1,10 @@
 .aside-menu{
     padding: 10px;
-    min-width: 20vw;
+    /* min-width: 20vw; */
+    width: 100%;
     background-color: red;
+    transform: translate(-100%);
+    transition: .5s;
 }
 
 .aside-menu__title {
@@ -21,3 +24,12 @@
     background-color: yellow;
 }
 
+.aside-menu__burger {
+    border: 0px;
+    background-color: white;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    font-size: 30px;
+    color: red;
+}
