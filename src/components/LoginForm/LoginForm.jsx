@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // import request from '../../helpers/request';
 import { StoreContext } from '../../store/StoreProvider';
 import Modal from '../Modal/Modal';
@@ -18,7 +18,6 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
     const handleOnCloseModal = event => {
         event.preventDefault();
         handleOnClose()
-        resetStateOfInputs();
     }
 
     const resetStateOfInputs = () => {
@@ -59,12 +58,18 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
             }
     }
 
+    useEffect(() => {
+        if(isModalOpen){
+        resetStateOfInputs();
+        }
+    },[isModalOpen]);
+
     const validateMessageComponent = validateMessage.length ?
     <p className='login-form__validate-message'>{validateMessage}</p> 
     : null;
 
     return ( 
-        <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={false} >
+        <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={true} >
             {validateMessageComponent}
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
                 <div className="login-form__row">

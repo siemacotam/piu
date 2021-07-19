@@ -1,0 +1,23 @@
+.aside-menu{
+    padding: 10px;
+    min-width: 20vw;
+    background-color: red;
+}
+
+.aside-menu__title {
+    margin-top: 20px;
+}
+
+.aside-menu__link {
+    margin-top: 10px;
+    padding: 3px 5px;
+    color: green;
+    text-align: center;
+    background-color: blue;
+    cursor: pointer;
+}
+
+.aside-menu__link:hover {
+    background-color: yellow;
+}
+

@@ -25,7 +25,7 @@ const Header = () => {
         <header className='header'>
             <div className='header__logo-wrapper'></div>
             <h1 className='header__title'>Super sklep</h1>
-            <button onClick={handleOnClick}>{setProperlyLabel}</button>
+            <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
             <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
         </header>
      );
