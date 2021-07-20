@@ -70,7 +70,7 @@ export const usersData = [
     {
       accessLevel: 0,
       budget: 150,
-      Dresses: [
+      dresses: [
         dressesData[0].id,
         dressesData[1].id,
         dressesData[2].id,
@@ -94,6 +94,7 @@ export const usersData = [
 const StoreProvider = ({children}) => {
     const [dresses, setDresses] = useState(dressesData);
     const [user, setUser] = useState(null)
+    const [isMenuOpen , setIsMenuOpen] = useState(true)
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
@@ -112,7 +113,10 @@ const StoreProvider = ({children}) => {
             dresses, 
             setDresses ,
             user, 
-            setUser}}>
+            setUser,
+            isMenuOpen,
+            setIsMenuOpen,
+            }}>
             {children}
         </StoreContext.Provider>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Dress.css'
-import logo from '.../../../src/images/logo.png'
+import logo from '../../images/logo.png'
 
 const Dress = ({authors, img, price, title}) => {
     const allAuthors = authors.join(', ')

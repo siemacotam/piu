@@ -5,7 +5,7 @@
     width: 100%;
     background-color: red;
     transform: translate(-100%);
-    transition: .3s;
+    transition: .6s;
     position: relative;
 }
 
@@ -40,6 +40,7 @@
     bottom: 5%;
     font-size: 30px;
     color: red;
+    z-index: 100;
 }
 
 
@@ -47,6 +48,7 @@
 	.aside-menu{
         max-width: 20vw;
         transform: translate(0%);
+        display: block;
     }
     .aside-menu__burger {
         display: none;

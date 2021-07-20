@@ -4,3 +4,13 @@
     padding: 15px;
     max-width: 1366px;
 }
+
+.none{
+    display: none;
+}
+
+@media (min-width: 700px) {
+	.none {
+        display: block;
+    }
+}

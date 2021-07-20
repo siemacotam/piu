@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import '../AsideMenu.css'
 
-const AdminMenu = () => {
+const AdminMenu = ({hideMenu}) => {
     return ( 
         <>
             <p className='aside-menu__title'>Panel administratora</p>
             <nav>
                 <ul>
                     <li>
-                        <Link to='/menage-items' className='aside-menu__link'>zarządzanie towarem</Link>
+                        <Link onClick={hideMenu} to='/menage-items' className='aside-menu__link'>zarządzanie towarem</Link>
                     </li>
                 </ul>
             </nav>

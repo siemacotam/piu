@@ -1,0 +1,16 @@
+.user-account {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-account__title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-account__list {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 25px;
+}

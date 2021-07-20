@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import Dress from './subcomponents/Dress';
+import Dress from '../Dress/Dress';
 import { StoreContext } from '../../store/StoreProvider';
 
 import './Dresses.css'
