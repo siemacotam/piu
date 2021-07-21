@@ -12,7 +12,7 @@ const Dresses = () => {
 
     return ( 
         <section className='dresses'>
-            <h2 className='dresses__title'></h2>
+            <h2 className='dresses__title'>Oferta</h2>
             <ul className='dresses__list'>
                 {dressesElements}
             </ul>

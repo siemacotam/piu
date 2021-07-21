@@ -81,8 +81,8 @@ export const usersData = [
     {
       accessLevel: 1,
       budget: 1000000,
-      courses: [
-        dressesData.map(course => course.id)
+      dresses: [
+        dressesData.map(dress => dress.id)
       ],
       login: 'Admin',
       password: '******',

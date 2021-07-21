@@ -45,7 +45,7 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
     const handleOnSubmit = (event) => {
         event.preventDefault();
 
-        const userLogin = usersData.filter(user => (user.login === login) ? user : null )
+        const userLogin = usersData.filter(user => user.login === login ? user.login : null)
         const userPassword = usersData.filter(userPassword => userPassword.password === password ? userPassword : null)
         const activeUser = usersData.filter(user => user.login === login && user.password=== password ? user : null)
 
