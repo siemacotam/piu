@@ -1,0 +1,18 @@
+.dress-popup {
+    display: flex;
+    flex-direction: column;
+}
+
+.dress-popup__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dress-popup__form-row {
+    display: flex;
+}
+
+.dress-popup__input {
+    display: flex;
+    flex-grow: 1;
+}
