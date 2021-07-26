@@ -36,9 +36,9 @@ const Dress = ({authors, img, id, isUserContext, price, title}) => {
             <article className='dress-card'>
                 <h3 className='dress-card__title'>{title}</h3>
                 <img className='dress-card__image' src={logo} alt={title} />
-                <p className='dress-card__price'>`koszt: ${price} zł`</p>
                 <p className='dress-card__authors'>{`Autorzy : ${allAuthors}`}</p>
-                {shouldBeBuyButtonVisibile && <button onClick={handleOnClick }>Zakup </button>}
+                <p className='dress-card__price'>koszt: <span className='dress-card__price-number'>${price}</span> zł</p>
+                {shouldBeBuyButtonVisibile && <button className='dress-card__button' onClick={handleOnClick }>Zakup </button>}
             </article>
         </li>
      );

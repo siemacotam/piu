@@ -85,10 +85,6 @@ const DressPopup = ({
     }
 
 
-
-
-
-
     const addAuthor = (e) => {
         e.preventDefault();
 

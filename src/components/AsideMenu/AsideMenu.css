@@ -3,7 +3,7 @@
     display: none;
     padding: 10px;
     width: 100%;
-    background-color: red;
+    background-color: #AFB2B0;
     transform: translate(-100%);
     transition: .6s;
     position: relative;
@@ -16,30 +16,40 @@
 
 .aside-menu__title {
     margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .aside-menu__link {
+    text-decoration: none;
     margin-top: 10px;
-    padding: 3px 5px;
-    color: green;
+    padding: 3px;
+    display: block;
+    background-color: #898C8A;
+    color: white;
     text-align: center;
-    background-color: blue;
     cursor: pointer;
 }
 
 
 .aside-menu__link:hover {
-    background-color: yellow;
+    background-color: #646564;
 }
 
 .aside-menu__burger {
-    border: 0px;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     background-color: white;
     position: fixed;
     right: 5%;
     bottom: 5%;
-    font-size: 30px;
-    color: red;
+    font-size: 20px;
+    background-color: white;
     z-index: 100;
 }
 

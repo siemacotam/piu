@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
 
-import { dressesData, StoreContext } from '../../store/StoreProvider';
+import { StoreContext, dressesData } from '../../store/StoreProvider';
 import DressDetails from './subcomponents/DressDetails';
 import DressPopup from './subcomponents/DressPopup';
 
+
 const AdminPanel = () => {
     const[ isOpenPopup, setIsOpenPopup] = useState(false);
-    const { dresses } = useContext(StoreContext);
-    const { setDresses } = useContext(StoreContext);
+    const { dresses, setDresses} = useContext(StoreContext);
+
 
     const showPopup = () => setIsOpenPopup(true);
     const hidePopup = (event) => {
@@ -18,7 +19,8 @@ const AdminPanel = () => {
         setDresses(dressesData)
     }
 
-    const dressesElement = dresses.map(dress => <DressDetails  key={dress.id} {...dress} />);
+    let dressesElement = dresses.map(dress => <DressDetails  key={dress.id} {...dress} />);
+
 
     return ( 
         <section>

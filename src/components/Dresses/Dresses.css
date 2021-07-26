@@ -5,12 +5,15 @@
 }
 
 .dresses__title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .dresses__list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 25px;
+    list-style: none;
 }

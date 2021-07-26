@@ -12,7 +12,6 @@ const DressDetails = (props) => {
         if(event){
             event.preventDefault()
             }
-        
         setIsOpenPopup(false);
     }
 
