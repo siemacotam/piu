@@ -16,22 +16,27 @@
 
 .aside-menu__title {
     margin-top: 20px;
-    padding: 20px;
+    padding: 8px;
     text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: bold;
+    background-color: #4E4E4E;
+    color: white;
+    border-radius: 30px;
 }
 
 .aside-menu__link {
+    width: 80%; 
     text-decoration: none;
-    margin-top: 10px;
+    margin: 10px auto;
     padding: 3px;
     display: block;
-    background-color: #898C8A;
+    background-color: #9A9A9A;
     color: white;
     text-align: center;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 

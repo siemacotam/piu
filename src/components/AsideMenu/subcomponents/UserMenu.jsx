@@ -8,15 +8,22 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
     const { isMenuOpen, setIsMenuOpen } = useContext(StoreContext);
     return ( 
         <>
-            <p className='aside-menu__title'>Panel użytkownika</p>
-            <nav>
-                <ul>
-                    <li>
-                        <Link onClick={hideMenu} className='aside-menu__link' to='/'>Sukienki w sprzedaży</Link>
-                    </li>
-                    {isUserLogged && <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-dresses'>Moje zamówienia</Link> </li> }
-                </ul>
-            </nav>
+            <p className='aside-menu__title'>Witamy !</p>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Promocje</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Szukaj</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Pomoc i kontakt</Link>
+            {isUserLogged ?
+            <>
+                <p className='aside-menu__title'>Panel użytkownika</p>
+                <nav>
+                    <ul>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-dresses'>Moje zamówienia</Link> </li>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-dresses'>Moje dane</Link> </li>
+                    </ul>
+                </nav> 
+            </>
+            :null }
         </>
      );
 }

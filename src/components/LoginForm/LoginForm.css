@@ -12,3 +12,19 @@
     display: flex;
     justify-content: space-around;
 }
+
+.login-form__button{
+    padding: 5px;
+    background-color: #DADADA ;
+    border: 1px solid #B4B4B4;
+    font-weight: bold;
+}
+
+.login-form__label {
+    padding: 3px;
+    font-weight: bold;
+}
+
+.login-form__input {
+    padding: 3px;
+}

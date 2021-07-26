@@ -73,20 +73,20 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
             {validateMessageComponent}
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
                 <div className="login-form__row">
-                    <label>
+                    <label className='login-form__label'>
                         Login:
-                        <input onChange={handleOnChangeLogin} type="text" value={login}/>
+                        <input className='login-form__input' onChange={handleOnChangeLogin} type="text" value={login}/>
                     </label>
                 </div>
                 <div className="login-form__row">
-                <label>
+                <label className='login-form__label'>
                     Hasło:
-                        <input onChange={handleOnChangePassword} type="password" value={password}/>
+                        <input className='login-form__input' onChange={handleOnChangePassword} type="password" value={password}/>
                     </label>
                 </div>
                 <div className="login-form__row">
-                    <button type='submit'>Zaloguj</button>
-                    <button onClick={handleOnCloseModal} type='button'>Anuluj</button>
+                    <button className='login-form__button' type='submit'>Zaloguj</button>
+                    <button className='login-form__button' onClick={handleOnCloseModal} type='button'>Anuluj</button>
                 </div>
             </form>
         </Modal>

@@ -8,7 +8,6 @@ import UserMenu from './subcomponents/UserMenu';
 const ADMIN_TYPE = 1
 
 const AsideMenu = () => {
-    // const [flag , setFlag] = useState(true)
     const { isMenuOpen , setIsMenuOpen } = useContext(StoreContext);
     const { user } = useContext(StoreContext);
 

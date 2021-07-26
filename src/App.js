@@ -12,8 +12,8 @@ import './App.css';
 const App = () => {
   return ( 
     <StoreProvider>
-      <Header />
       <Router basename={process.env.PUBLIC_URL}>
+        <Header />
         <div className="content-wrapper">
             <AsideMenu />
             <Content />
