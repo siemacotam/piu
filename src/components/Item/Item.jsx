@@ -5,7 +5,7 @@ import logo from '../../images/logo.png'
 import { StoreContext, usersData } from '../../store/StoreProvider';
 import { useHistory } from 'react-router-dom';
 
-const Item = ({authors, img, id, isUserContext, price, title}) => {
+const Item = ({authors, img, id, isUserContext, price, title , rate, platform, distribution, version, pegi}) => {
     const { user, setUser, items } = useContext(StoreContext);
     const history = useHistory();
 
@@ -38,7 +38,7 @@ const Item = ({authors, img, id, isUserContext, price, title}) => {
 
         // usersData.splice(userIndex, 1, userData)
 
-        
+        item.amount ++
         // shoppingCart.push(item)
         setShoppingCart( [...shoppingCart,item])
         // setUser([userData])
@@ -69,10 +69,10 @@ const Item = ({authors, img, id, isUserContext, price, title}) => {
                 <img className='item-card__image' src={logo} alt={title} />
                 <h3 className='item-card__title'>{title}</h3>
                 <p className='item-card__rate'>opinie</p>
-                <p>Platforma</p>
-                <p>Dystrybucja cyfrowa:</p>
-                <p>Wersja:</p>
-                <p>PEGI: </p>
+                <p>Platforma:{platform}</p>
+                <p>Dystrybucja cyfrowa:{distribution}</p>
+                <p>Wersja:{version}</p>
+                <p>PEGI:{pegi} </p>
                 {/* <p className='item-card__authors'>{`Autorzy : ${allAuthors}`}</p> */}
                 <p className='item-card__price'>${price}</p>
                 <button key={id} className='item-card__button' onClick={hasUserItemAlready.length === 0 ? handleOnClick: handleRemoveFromCart }>
