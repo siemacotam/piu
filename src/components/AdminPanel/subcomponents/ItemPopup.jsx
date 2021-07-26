@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { dressesData, StoreContext } from '../../../store/StoreProvider';
+import { itemsData, StoreContext } from '../../../store/StoreProvider';
 
 import Modal from '../../Modal/Modal'
 
-import './DressPopup.css'
+import './ItemPopup.css'
 
-const DressPopup = ({
+const ItemPopup = ({
     authors =[],
     hidePopup,
     isEditMode = true,
@@ -21,7 +21,7 @@ const DressPopup = ({
     const [formPrice, setFormPrice] = useState(price);
     const [formTitle, setFormTitle] = useState(title);
 
-    const { setDresses } = useContext(StoreContext);
+    const { setItems } = useContext(StoreContext);
 
     const handleOnChangeAuthor = event => setAuthor(event.target.value);
     const handleOnChangeImg = event => setFormImg(event.target.value);
@@ -31,7 +31,7 @@ const DressPopup = ({
     const handleOnSubmit = (e) => {
         e.preventDefault();
 
-        const dressObject = {
+        const itemObject = {
             authors: formAuthors,
             id,
             img: formImg,
@@ -45,16 +45,16 @@ const DressPopup = ({
             return
             }
 
-            const indexDressToUpdate = dressesData.findIndex(dress => dress.id === id)
-            if(indexDressToUpdate === -1){
+            const indexItemToUpdate = itemsData.findIndex(item => item.id === id)
+            if(indexItemToUpdate === -1){
             alert('nie ma kursu o podanym id')
             return
             }
 
-            dressesData.splice(indexDressToUpdate, 1, dressObject)
+            itemsData.splice(indexItemToUpdate, 1, itemObject)
 
         } else {
-            const newDress = {
+            const newItem = {
                 authors: formAuthors,
                 id: Math.floor(Math.random() * 100000),
                 img: formImg,
@@ -62,25 +62,25 @@ const DressPopup = ({
                 title: formTitle,
             };
 
-            if(!newDress.authors.length || !newDress.price || !newDress.title){
+            if(!newItem.authors.length || !newItem.price || !newItem.title){
                 alert('nie wypełniono wszystkich wymaganych danych')
                 return
             }
 
-            const isDressExist = dressesData.some(({title: currentTitle}) => currentTitle === newDress.title)
-            if(isDressExist){
+            const isItemExist = itemsData.some(({title: currentTitle}) => currentTitle === newItem.title)
+            if(isItemExist){
                 alert('istnieje juz taki objekt')
                 return
             }
 
-            dressesData.push(newDress);
+            itemsData.push(newItem);
             setFormAuthors([])
             setFormImg('')
             setFormPrice(0)
             setFormTitle('')
         }
 
-        setDresses(dressesData)
+        setItems(itemsData)
         hidePopup()
     }
 
@@ -108,31 +108,31 @@ const DressPopup = ({
 
     return ( 
         <Modal handleOnClose={hidePopup} isOpen={isOpenPopup} >
-            <div className='dress-popup'>
-                <form className='dress-popup__form' method='submit' onSubmit={handleOnSubmit}>
-                    <div className='dress-popup__form-row'>
+            <div className='item-popup'>
+                <form className='item-popup__form' method='submit' onSubmit={handleOnSubmit}>
+                    <div className='item-popup__form-row'>
                         <label>
                             Autor:
-                            <input className='dress-popup__input' type='text' value={formAuthor} onChange={handleOnChangeAuthor} />
+                            <input className='item-popup__input' type='text' value={formAuthor} onChange={handleOnChangeAuthor} />
                             <button onClick={addAuthor}>Dodaj Autora</button>
                         </label>
                     </div>
-                    <div className='dress-popup__form-row'>
+                    <div className='item-popup__form-row'>
                         <label>
                             Img url:
-                            <input className='dress-popup__input' type='text' value={formImg} onChange={handleOnChangeImg} />
+                            <input className='item-popup__input' type='text' value={formImg} onChange={handleOnChangeImg} />
                         </label>
                     </div>
-                    <div className='dress-popup__form-row'>
+                    <div className='item-popup__form-row'>
                         <label>
                             Cena:
-                            <input className='dress-popup__input' type='number' value={formPrice} onChange={handleOnChangePrice} />
+                            <input className='item-popup__input' type='number' value={formPrice} onChange={handleOnChangePrice} />
                         </label>
                     </div>
-                    <div className='dress-popup__form-row'>
+                    <div className='item-popup__form-row'>
                         <label>
                             Tytuł:
-                            <input className='dress-popup__input' type='text' value={formTitle} onChange={handleOnChangeTitle} />
+                            <input className='item-popup__input' type='text' value={formTitle} onChange={handleOnChangeTitle} />
                         </label>
                     </div>
                     <button type='submit'>{correctLabel}</button>
@@ -147,4 +147,4 @@ const DressPopup = ({
      );
 }
  
-export default DressPopup;
+export default ItemPopup;

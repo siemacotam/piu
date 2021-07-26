@@ -7,7 +7,7 @@ import React, { createContext,
 
 export const StoreContext = createContext(null)
 
-export const dressesData = [
+export const itemsData = [
     {
       authors: ['Bartłomiej Borowczyk'],
       id: 1,
@@ -70,10 +70,10 @@ export const usersData = [
     {
       accessLevel: 0,
       budget: 150,
-      dresses: [
-        dressesData[0].id,
-        dressesData[1].id,
-        dressesData[2].id,
+      items: [
+        itemsData[0].id,
+        itemsData[1].id,
+        itemsData[2].id,
       ],
       login: 'user',
       password: 'user',
@@ -81,8 +81,8 @@ export const usersData = [
     {
       accessLevel: 1,
       budget: 1000000,
-      dresses: [
-        dressesData.map(dress => dress.id)
+      items: [
+        itemsData.map(dress => dress.id)
       ],
       login: 'Admin',
       password: '******',
@@ -92,7 +92,7 @@ export const usersData = [
 
 
 const StoreProvider = ({children}) => {
-    const [dresses, setDresses] = useState(dressesData);
+    const [items, setItems] = useState(itemsData);
     const [user, setUser] = useState(null)
     const [isMenuOpen , setIsMenuOpen] = useState(true)
 
@@ -106,12 +106,12 @@ const StoreProvider = ({children}) => {
     //     fetchData();
     // },[])
 
-    useEffect(() => {setDresses(dressesData)},[])
+    useEffect(() => {setItems(itemsData)},[])
 
     return (
         <StoreContext.Provider value ={ {
-            dresses, 
-            setDresses ,
+            items, 
+            setItems ,
             user, 
             setUser,
             isMenuOpen,

@@ -18,8 +18,8 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
                 <p className='aside-menu__title'>Panel użytkownika</p>
                 <nav>
                     <ul>
-                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-dresses'>Moje zamówienia</Link> </li>
-                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-dresses'>Moje dane</Link> </li>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje zamówienia</Link> </li>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje dane</Link> </li>
                     </ul>
                 </nav> 
             </>

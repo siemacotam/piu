@@ -1,18 +1,18 @@
-.dress-popup {
+.item-popup {
     display: flex;
     flex-direction: column;
 }
 
-.dress-popup__form {
+.item-popup__form {
     display: flex;
     flex-direction: column;
 }
 
-.dress-popup__form-row {
+.item-popup__form-row {
     display: flex;
 }
 
-.dress-popup__input {
+.item-popup__input {
     display: flex;
     flex-grow: 1;
 }

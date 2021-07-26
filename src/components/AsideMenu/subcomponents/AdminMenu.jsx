@@ -10,7 +10,7 @@ const AdminMenu = ({hideMenu}) => {
             <nav>
                 <ul>
                     <li>
-                        <Link onClick={hideMenu} to='/menage-items' className='aside-menu__link'>zarządzanie towarem</Link>
+                        <Link onClick={hideMenu} to='/menage-items' className='aside-menu__link'>Zarządzanie towarem</Link>
                     </li>
                 </ul>
             </nav>

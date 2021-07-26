@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { StoreContext } from '../../store/StoreProvider';
 
-import Dress from '../Dress/Dress';
+import Item from '../Item/Item';
 
 import './UserAccount.css'
 
 const UserAccount = () => {
-    const { user, dresses } = useContext(StoreContext)
+    const { user, items } = useContext(StoreContext)
 
-    const buyedItems = dresses
-    .filter( item => user[0].dresses.includes(item.id))
-    .map(item => <Dress isUserContext={true} key={item.id} {...item}/>)
+    const buyedItems = items
+    .filter( item => user[0].items.includes(item.id))
+    .map(item => <Item isUserContext={true} key={item.id} {...item}/>)
 
     return ( 
         <section className="user-account">

@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 
-import { StoreContext, dressesData } from '../../store/StoreProvider';
-import DressDetails from './subcomponents/DressDetails';
-import DressPopup from './subcomponents/DressPopup';
+import { StoreContext, itemsData } from '../../store/StoreProvider';
+import ItemDetails from './subcomponents/ItemDetails';
+import ItemPopup from './subcomponents/ItemPopup';
 
 
 const AdminPanel = () => {
     const[ isOpenPopup, setIsOpenPopup] = useState(false);
-    const { dresses, setDresses} = useContext(StoreContext);
+    const { items, setItems} = useContext(StoreContext);
 
 
     const showPopup = () => setIsOpenPopup(true);
@@ -16,17 +16,17 @@ const AdminPanel = () => {
         event.preventDefault()
         }
         setIsOpenPopup(false);
-        setDresses(dressesData)
+        setItems(itemsData)
     }
 
-    let dressesElement = dresses.map(dress => <DressDetails  key={dress.id} {...dress} />);
+    let itemsElement = items.map(item => <ItemDetails  key={item.id} {...item} />);
 
 
     return ( 
         <section>
-            {dressesElement}
+            {itemsElement}
             <button onClick={showPopup}>Dodaj nowy kurs</button>
-            <DressPopup isEditMode={false} isOpenPopup={isOpenPopup} hidePopup={hidePopup} />
+            <ItemPopup isEditMode={false} isOpenPopup={isOpenPopup} hidePopup={hidePopup} />
         </section>
      );
 }
