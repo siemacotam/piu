@@ -11,6 +11,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
             <p className='aside-menu__title'>Witamy !</p>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Promocje</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Nowości</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Szukaj</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Pomoc i kontakt</Link>
             {isUserLogged ?
