@@ -9,6 +9,7 @@
     letter-spacing: 3px;
     text-align: center;
     margin: 20px 0;
+    border: 2px solid black;
 }
 
 .items__list {

@@ -5,7 +5,7 @@ import { StoreContext } from '../../../store/StoreProvider';
 import '../AsideMenu.css'
 
 const UserMenu = ({ isUserLogged, hideMenu }) => {
-    const { isMenuOpen, setIsMenuOpen } = useContext(StoreContext);
+    const { isMenuOpen, setIsMenuOpen, shoppingCart } = useContext(StoreContext);
     return ( 
         <>
             <p className='aside-menu__title'>Witamy !</p>
@@ -14,6 +14,8 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Nowości</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Szukaj</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Pomoc i kontakt</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/shopping-cart'>Koszyk ({shoppingCart.length})</Link>
+
             {isUserLogged ?
             <>
                 <p className='aside-menu__title'>Panel użytkownika</p>

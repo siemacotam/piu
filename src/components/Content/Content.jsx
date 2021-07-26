@@ -5,6 +5,7 @@ import { StoreContext } from '../../store/StoreProvider';
 import Items from '../Items/Items';
 import UserAccount from '../UserAccount/UserAccount';
 import AdminPanel from '../AdminPanel/AdminPanel';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
  
 import './Content.css';
 
@@ -23,6 +24,7 @@ const Content = () => {
                 <Route exact path='/' render={() => <Items />}></Route>
                 {isUserLogged && <Route exact path='/my-items' render={() => <UserAccount />}></Route>}
                 {isAdmin && <Route exact path='/menage-items' render={() => <AdminPanel />}></Route>}
+                <Route path='/shopping-cart' render ={()=> <ShoppingCart/>}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>
         </main>
