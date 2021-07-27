@@ -27,6 +27,7 @@
 
 .shopping-cart__element-wrap {
     display: flex;
+    flex-basis: 30%;
     flex-wrap: wrap;
     justify-content: space-around;
 }

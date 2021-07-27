@@ -12,7 +12,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Promocje</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Nowości</Link>
-            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Szukaj</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/search'>Szukaj</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Pomoc i kontakt</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/shopping-cart'>Koszyk ({shoppingCart.length})</Link>
 

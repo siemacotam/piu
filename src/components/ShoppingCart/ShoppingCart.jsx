@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import { StoreContext } from '../../store/StoreProvider';
 import CartItem from './subcomponent/CartItem';
@@ -14,6 +15,12 @@ const ShoppingCart = () => {
 
     const itemsElements = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
 
+    const allItemsPrices = shoppingCart.map(item => Math.round(item.amount * item.price * 100) / 100)
+
+    const  orderSummary = shoppingCart.length > 0 ?
+    allItemsPrices.reduce((a,b) => a+b)
+    : 0
+
     return ( 
         <>
             <nav>
@@ -25,8 +32,8 @@ const ShoppingCart = () => {
                 <button className='shopping-cart__button' onClick={() => {setShoppingCart([])}}>Wyczyść koszyk</button>
             </nav>
             <div>
-                <p>łączna kwota : </p>
-                <button>Przejdź do dostawy</button>
+                <p>łączna kwota : {orderSummary}  </p>
+                <button><Link to='/checkout'> Przejdź do dostawy</Link></button>
             </div>
         </>
      );

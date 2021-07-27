@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 
 import './Item.css'
 import logo from '../../images/logo.png'
-import { StoreContext, usersData } from '../../store/StoreProvider';
+import { StoreContext } from '../../store/StoreProvider';
 import { useHistory } from 'react-router-dom';
 
-const Item = ({authors, img, id, isUserContext, price, title , rate, platform, distribution, version, pegi}) => {
+const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, version, pegi}) => {
     const { user, setUser, items } = useContext(StoreContext);
     const history = useHistory();
 
@@ -57,6 +57,7 @@ const Item = ({authors, img, id, isUserContext, price, title , rate, platform, d
         // const newShoppingCartStatus = shoppingCart.splice(index, 1)
         // console.log(index, newShoppingCartStatus)
         // setShoppingCart(newShoppingCartStatus)
+        item.amount --
         const newShoppingCart = shoppingCart.filter(i => i.id !== item.id)
         setShoppingCart(newShoppingCart)
         // }
@@ -77,7 +78,7 @@ const Item = ({authors, img, id, isUserContext, price, title , rate, platform, d
                 <p className='item-card__price'>${price}</p>
                 <button key={id} className='item-card__button' onClick={hasUserItemAlready.length === 0 ? handleOnClick: handleRemoveFromCart }>
                     {hasUserItemAlready.length === 0 ?
-                    <i class="fas fa-cart-plus"></i> : <i class="fas fa-window-close"></i>}
+                    <i className="fas fa-cart-plus"></i> : <i className="fas fa-window-close"></i>}
                 </button>
             </article>
         </li>

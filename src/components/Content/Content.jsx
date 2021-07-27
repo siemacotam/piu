@@ -6,6 +6,8 @@ import Items from '../Items/Items';
 import UserAccount from '../UserAccount/UserAccount';
 import AdminPanel from '../AdminPanel/AdminPanel';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import Checkout from '../Checkout/Checkout';
+import Search from '../Search/Search';
  
 import './Content.css';
 
@@ -25,6 +27,8 @@ const Content = () => {
                 {isUserLogged && <Route exact path='/my-items' render={() => <UserAccount />}></Route>}
                 {isAdmin && <Route exact path='/menage-items' render={() => <AdminPanel />}></Route>}
                 <Route path='/shopping-cart' render ={()=> <ShoppingCart/>}></Route>
+                <Route path='/checkout' render={() => <Checkout/>}></Route>
+                <Route path='/search' render={()=> <Search />}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>
         </main>
