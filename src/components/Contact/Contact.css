@@ -1,0 +1,39 @@
+.contactInfo {
+
+}
+
+.contactInfo__title{
+    
+}
+
+.contactInfo__text{
+
+}
+
+.contactInfo__mail{
+    color: blue;
+}
+
+.contactInfo__map {
+    position: relative;
+    width: 90%;
+    margin: 15px auto; 
+    height: 30vh;
+    border: 1px solid black;
+}
+
+.contactForm {
+    text-align: center;
+}
+
+.contactForm__title{
+    padding: 10px;
+}
+
+.contactForm__input {
+    padding: 3px;
+}
+
+.contactForm__text-area {
+    margin: 20px 0 6px;
+}
