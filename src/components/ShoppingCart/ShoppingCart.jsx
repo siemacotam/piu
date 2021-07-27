@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { StoreContext } from '../../store/StoreProvider';
@@ -21,19 +21,24 @@ const ShoppingCart = () => {
     allItemsPrices.reduce((a,b) => a+b)
     : 0
 
+    useEffect(() => { window.scrollTo(0,0)}, [])
+    
+
     return ( 
         <>
             <nav>
-                <p className='shopping-cart__title'>Koszyk ({shoppingCart.length})</p>
+                <div className="shopping-cart__upper-panel-wrap">
+                    <p className='shopping-cart__title'>Koszyk <span className='shopping-cart__title-span'>({shoppingCart.length})</span></p>
+                    <button className='shopping-cart__button' onClick={() => {setShoppingCart([])}}>Wyczyść koszyk</button>
+                </div> 
                 <ul className='shopping-cart'>
                     {shoppingCart.length ===0 ? 'Koszyk jest pusty' : null}
                     {itemsElements}
                 </ul>
-                <button className='shopping-cart__button' onClick={() => {setShoppingCart([])}}>Wyczyść koszyk</button>
             </nav>
-            <div>
-                <p>łączna kwota : {orderSummary}  </p>
-                <button><Link to='/checkout'> Przejdź do dostawy</Link></button>
+            <div className='shopping-cart__payment-panel'>
+                <p>Łączna kwota:</p> <p>{Math.round(orderSummary *100) /100} zł </p>
+                <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
             </div>
         </>
      );

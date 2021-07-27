@@ -63,11 +63,15 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
         // }
     }
 
+
     const hasUserItemAlready = shoppingCart.filter(i => i.id === id);
     return ( 
         <li className='item'>
             <article className='item-card'>
-                <img className='item-card__image' src={logo} alt={title} />
+                {/* <img className='item-card__image' src={logo} alt={title} /> */}
+
+                <img className='item-card__image' src={img} alt ={title}/>
+
                 <h3 className='item-card__title'>{title}</h3>
                 <p className='item-card__rate'>opinie</p>
                 <p>Platforma:{platform}</p>
@@ -75,7 +79,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
                 <p>Wersja:{version}</p>
                 <p>PEGI:{pegi} </p>
                 {/* <p className='item-card__authors'>{`Autorzy : ${allAuthors}`}</p> */}
-                <p className='item-card__price'>${price}</p>
+                <p className='item-card__price'>{price} zł</p>
                 <button key={id} className='item-card__button' onClick={hasUserItemAlready.length === 0 ? handleOnClick: handleRemoveFromCart }>
                     {hasUserItemAlready.length === 0 ?
                     <i className="fas fa-cart-plus"></i> : <i className="fas fa-window-close"></i>}

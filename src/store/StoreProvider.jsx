@@ -3,15 +3,24 @@ import React, { createContext,
     // useEffect,
     useState } from 'react';
 
+import cs from '../images/csmini.png';
+import warcraft3 from '../images/warcraft3mini.png';
+import angryBirds from '../images/angrybirdsmini.jpg';
+import diablo2 from '../images/diablo2mini.png';
+import doom from '../images/doommini.jpg';
+import starcraft from '../images/starcraftmini.png';
+import tibia from '../images/tibiamini.jpg';
+import wolfenstein from '../images/wolfensteinmini.jpg'
+
+
 // import request from '../helpers/request';
 
 export const StoreContext = createContext(null)
 
 export const itemsData = [
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 1,
-      img: 'https://img-a.udemycdn.com/course/240x135/1673856_ff13_5.jpg',
+      img: tibia,
       price: 69.99,
       title: 'Tibia',
       rate:[],
@@ -22,9 +31,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 2,
-      img: 'https://img-a.udemycdn.com/course/240x135/1844944_e2f8_3.jpg',
+      img: warcraft3,
       price: 69.99,
       title: 'Warcraft 3',
       rate:[],
@@ -35,9 +43,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 3,
-      img: 'https://img-a.udemycdn.com/course/240x135/1916892_601a.jpg',
+      img: starcraft,
       price: 69.99,
       title: 'Starcraft',
       rate:[],
@@ -48,11 +55,10 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk', 'Mateusz Domański'],
       id: 4,
-      img: 'https://img-a.udemycdn.com/course/240x135/2049385_9a8c.jpg',
+      img: diablo2,
       price: 69.99,
-      title: 'Diablo 3',
+      title: 'Diablo 2',
       rate:[],
       platform:'PC',
       distribution:'Steam',
@@ -61,9 +67,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 5,
-      img: 'https://img-a.udemycdn.com/course/240x135/2330558_0de2_2.jpg',
+      img: cs,
       price: 69.99,
       title: 'Counter-strike',
       rate:[],
@@ -74,9 +79,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 6,
-      img: 'https://img-a.udemycdn.com/course/240x135/2331806_b90c_2.jpg',
+      img: doom,
       price: 69.99,
       title: 'Doom',
       rate:[],
@@ -87,9 +91,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk'],
       id: 7,
-      img: 'https://img-a.udemycdn.com/course/240x135/2258904_bd66_4.jpg',
+      img: wolfenstein,
       price: 0,
       title: 'Wolfenstein',
       rate:[],
@@ -100,9 +103,8 @@ export const itemsData = [
       amount: 0,
     },
     {
-      authors: ['Bartłomiej Borowczyk', 'Mateusz Domański', 'Michał Dziedziński', 'Kacper Sieradziński'],
       id: 8,
-      img: 'https://img-a.udemycdn.com/course/240x135/3428814_eee3_4.jpg',
+      img: angryBirds,
       price: 69.99,
       title: 'Angry birds',
       rate:[],
