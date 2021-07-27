@@ -36,10 +36,13 @@ const ShoppingCart = () => {
                     {itemsElements}
                 </ul>
             </nav>
-            <div className='shopping-cart__payment-panel'>
-                <p>Łączna kwota:</p> <p>{Math.round(orderSummary *100) /100} zł </p>
-                <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
-            </div>
+            {shoppingCart.length > 0 
+            ?   <div className='shopping-cart__payment-panel'>
+                    <p>Łączna kwota:</p> <p>{Math.round(orderSummary *100) /100} zł </p>
+                    <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
+                </div>
+                : null
+            }
         </>
      );
 }
