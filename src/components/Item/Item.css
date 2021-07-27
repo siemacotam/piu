@@ -1,3 +1,7 @@
+.item { 
+    list-style: none;
+}
+
 .item-card {
     position: relative;
     list-style: none;

@@ -11,7 +11,8 @@ const Search = () => {
 
     const handleChange = (e) => {
         const value = e.target.value
-        setSearchValue(value)
+        const littleLettersValue = value.toLowerCase()
+        setSearchValue(littleLettersValue)
     }
 
     const searchedItem = items.filter(i =>
@@ -21,15 +22,17 @@ const Search = () => {
     const foundItem = searchedItem.map(item => <Item key={item.id} {...item}/>)
 
 
-    const itemsElements = searchValue ? foundItem : <p>Czego szukasz ?</p>
+    const itemsElements = searchValue ? foundItem : <p className='searchForm__info'>Czego szukasz ?</p>
 
     console.log(foundItem)
     return ( 
         <section className='searchForm'>
-            <input type="text" value={searchValue} onChange={handleChange} />
-            <button onClick={() => {setSearchValue('')}}>Wyczyść</button>
+            <div className="searchPanelWrap">
+                <input className='searchForm__input' type="text" value={searchValue} onChange={handleChange} /> <br />
+                <button className='searchForm__button' onClick={() => {setSearchValue('')}}>Wyczyść</button>
+            </div>
             {itemsElements}
-            {foundItem.length === 0 ? <p>brak wyszukiwanych elementów</p> : null}
+            {foundItem.length === 0 ? <p className='searchForm__info'>brak wyszukiwanych elementów</p> : null}
         </section>
 
      );

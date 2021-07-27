@@ -65,7 +65,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
 
     const hasUserItemAlready = shoppingCart.filter(i => i.id === id);
     return ( 
-        <li>
+        <li className='item'>
             <article className='item-card'>
                 <img className='item-card__image' src={logo} alt={title} />
                 <h3 className='item-card__title'>{title}</h3>
