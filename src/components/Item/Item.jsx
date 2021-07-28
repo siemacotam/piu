@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
 import './Item.css'
-import logo from '../../images/logo.png'
+import { Link } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 import { useHistory } from 'react-router-dom';
 
-const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount}) => {
+const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link}) => {
     const { user, setUser, items } = useContext(StoreContext);
     const history = useHistory();
 
@@ -60,7 +60,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
     : user[0].items.filter(i => i === id )
         
     const isButtonNeeded = userItems.length === 1 
-    ? isUserContext? null : <p className='item-card__info'>Posiadasz juz tą grę</p> 
+    ? isUserContext? null : <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>
     : shopButton()
 
 
@@ -77,7 +77,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
                 <p>Wersja:{language}</p>
                 <p>PEGI:{pegi} </p>
                 {isUserContext 
-                    ? <button className='item-card__button' >Play</button>
+                    ? <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>
                     : null
                 }
                 {isButtonNeeded }

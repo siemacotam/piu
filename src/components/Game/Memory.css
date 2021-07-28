@@ -1,0 +1,52 @@
+.memory-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.memoryElement {
+    flex-basis: 30%;
+    flex-grow: 1;
+    height: 14vh;
+    border: 2px solid white;
+}
+
+.memoryElement.red {
+    background-color: red;
+}
+.memoryElement.blue {
+    background-color: blue;
+}
+.memoryElement.yellow {
+    background-color: yellow;
+}
+.memoryElement.cadetblue {
+    background-color: cadetblue;
+}
+.memoryElement.green {
+    background-color: green;
+}
+.memoryElement.brown {
+    background-color: brown;
+}
+.memoryElement.grey {
+    background-color: grey;
+}
+.memoryElement.violet {
+    background-color: violet;
+}
+.memoryElement.lightgreen {
+    background-color: lightgreen;
+}
+.memoryElement.hidden {
+    background-color: black;
+}
+.memoryElement.off {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (orientation: landscape) {
+    .memoryElement {
+        height: 25vh;
+        flex-basis: 15%
+    }
+}

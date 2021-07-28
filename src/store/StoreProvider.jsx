@@ -31,6 +31,7 @@ export const itemsData = [
       pegi:'13',
       version: 0,
       type: 'new',
+      link:'/game',
     },
     {
       id: 2,
@@ -44,7 +45,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type:'new',
+      type:'cut',
+      link:'/game',
     },
     {
       id: 3,
@@ -58,7 +60,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type: 'new',
+      type: 'bestseller',
+      link:'/game',
     },
     {
       id: 4,
@@ -73,6 +76,7 @@ export const itemsData = [
       pegi:'13',
       version: 0,
       type: 'cut',
+      link:'/game',
     },
     {
       id: 5,
@@ -86,7 +90,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type: 'cut',
+      type: 'new',
+      link:'/game',
     },
     {
       id: 6,
@@ -100,7 +105,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type: 'cut',
+      type: 'bestseller',
+      link:'/game',
     },
     {
       id: 7,
@@ -114,7 +120,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type: '',
+      type: 'cut',
+      link:'/game',
     },
     {
       id: 8,
@@ -128,7 +135,8 @@ export const itemsData = [
       language:'Polska',
       pegi:'13',
       version: 0,
-      type: '',
+      type: 'bestseller',
+      link:'/game',
     },
     {
       id: 9,
@@ -143,6 +151,7 @@ export const itemsData = [
       pegi:'3+',
       version: 0,
       type: 'free',
+      link:'/memory',
     }
   ];
 
@@ -156,6 +165,7 @@ export const usersData = [
         itemsData[0].id,
         itemsData[1].id,
         itemsData[2].id,
+        itemsData[8].id,
       ],
       login: 'user',
       password: 'user',

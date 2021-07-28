@@ -13,8 +13,11 @@ import UserDataPanel from '../UserDataPanel/UserDataPanel';
 import Promotions from '../Promotions/Promotions';
 import NewItems from '../NewItems/NewItems'; 
 import FreeGames from '../FreeGames/FreeGames';
+import Home from '../Home/Home';
 
 import './Content.css';
+import Game from '../Game/Game';
+import Memory from '../Game/Memory';
 
 const ADMIN_TYPE = 1;
 
@@ -28,11 +31,14 @@ const Content = () => {
     return ( 
         <main className={isMenuOpen ? 'content' : 'none'}>
             <Switch>
-                <Route exact path='/' render={() => <Items />}></Route>
+                <Route exact path='/' render={() => <Home />}></Route>
                 {isUserLogged && <Route exact path='/my-items' render={() => <UserAccount />}></Route>}
                 {isAdmin && <Route exact path='/menage-items' render={() => <AdminPanel />}></Route>}
+                <Route path='/offer' render={() => <Items />}></Route>
                 <Route path='/shopping-cart' render ={()=> <ShoppingCart/>}></Route>
                 <Route path='/checkout' render={() => <Checkout/>}></Route>
+                <Route path='/game' render={() => <Game/>}></Route>
+                <Route path='/memory' render={() => <Memory/>}></Route>
                 <Route path='/search' render={()=> <Search />}></Route>
                 <Route path='/contact' render ={() => <Contact />}></Route>
                 <Route path='/new' render ={() => <NewItems/>}></Route>

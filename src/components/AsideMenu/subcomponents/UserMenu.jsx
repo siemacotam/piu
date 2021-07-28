@@ -9,7 +9,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
     return ( 
         <>
             <p className='aside-menu__title'>Witamy !</p>
-            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/offer'>Oferta + rozwiń kategorie</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/promotions'>Promocje</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/new'>Nowości</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/free-games'>Darmowe gry</Link>
