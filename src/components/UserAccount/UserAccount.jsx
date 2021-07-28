@@ -14,7 +14,7 @@ const UserAccount = () => {
 
     return ( 
         <section className="user-account">
-            <h2 className='user-account__title'>kupione rzeczy</h2>
+            <h2 className='user-account__title'>Zagraj !</h2>
             <ul className='user-account__list'>
                 {buyedItems}
             </ul>

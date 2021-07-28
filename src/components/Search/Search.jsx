@@ -24,7 +24,6 @@ const Search = () => {
 
     const itemsElements = searchValue ? foundItem : <p className='searchForm__info'>Czego szukasz ?</p>
 
-    console.log(foundItem)
     return ( 
         <section className='searchForm'>
             <div className="searchPanelWrap">

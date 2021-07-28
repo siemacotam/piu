@@ -148,7 +148,6 @@ const StoreProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [isMenuOpen , setIsMenuOpen] = useState(true)
     const [shoppingCart, setShoppingCart] = useState([])
-    const [messages, setMessages] = useState(1)
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');

@@ -35,10 +35,9 @@ const CartItem = ({id , img, title, price, amount}) => {
             <h4 className='shopping-cart__element-title'>{title}</h4>
             <div className='shopping-cart__element-wrap'>
                 <select className='shopping-cart__element-select' value={itemAmount} onChange={handleChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option value="1">wersja podstawowa</option>
+                    <option value="2">wersja rozszerzona</option>
+                    <option value="3">wszystkie dodatki</option>
                 </select>
                 <button onClick={handleDelete} className='shopping-cart__delete-button'>usuń</button>
                 <p className='shopping-cart__price'>{Math.round(price * itemAmount *100) / 100} zł </p>

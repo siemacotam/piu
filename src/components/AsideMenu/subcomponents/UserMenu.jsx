@@ -12,6 +12,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Promocje</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Nowości</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/free-games'>Darmowe gry</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/search'>Szukaj</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/contact'>Pomoc i kontakt</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/shopping-cart'>Koszyk ({shoppingCart.length})</Link>
@@ -21,7 +22,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
                 <p className='aside-menu__title'>Panel użytkownika</p>
                 <nav>
                     <ul>
-                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje zamówienia</Link> </li>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje gry</Link> </li>
                         <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje dane</Link> </li>
                     </ul>
                 </nav> 
