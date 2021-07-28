@@ -65,6 +65,29 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
 
 
     const hasUserItemAlready = shoppingCart.filter(i => i.id === id);
+
+    const shopButton = () => {
+        return ( 
+        <>
+            <p className='item-card__price'>{price} zł</p>
+            <button key={id} className='item-card__button' 
+                onClick={hasUserItemAlready.length === 0 ? handleOnClick: handleRemoveFromCart }>
+                {hasUserItemAlready.length === 0 ?
+                <i className="fas fa-cart-plus"></i> : <i className="fas fa-window-close"></i>}
+            </button>
+        </>
+        )
+    }
+
+    const userItems = user === null
+    ? ''
+    : user[0].items.filter(i => i === id )
+        
+    const isButtonNeeded = userItems.length === 1 
+    ? isUserContext? null : <p className='item-card__info'>Posiadasz juz tą grę</p> 
+    : shopButton()
+
+
     return ( 
         <li className='item'>
             <article className='item-card'>
@@ -75,17 +98,14 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
                 <p>Dystrybucja cyfrowa:{distribution}</p>
                 <p>Wersja:{version}</p>
                 <p>PEGI:{pegi} </p>
-                {/* <p className='item-card__price'>{price} zł</p> */}
                 {isUserContext 
                     ? <button className='item-card__button' >Play</button>
-                    : <>
-                        <p className='item-card__price'>{price} zł</p>
-                        <button key={id} className='item-card__button' 
-                        onClick={hasUserItemAlready.length === 0 ? handleOnClick: handleRemoveFromCart }>
-                        {hasUserItemAlready.length === 0 ?
-                        <i className="fas fa-cart-plus"></i> : <i className="fas fa-window-close"></i>}
-                        </button></>
+                    : null
                 }
+                {isButtonNeeded }
+
+
+
             </article>
         </li>
      );

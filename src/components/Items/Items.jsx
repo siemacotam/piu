@@ -10,6 +10,7 @@ const Items = () => {
 
     const itemsElements = items.map(item => <Item key={item.id} {...item}/>)
 
+
     return ( 
         <section className='items'>
             <h2 className='items__title'>Oferta</h2>
