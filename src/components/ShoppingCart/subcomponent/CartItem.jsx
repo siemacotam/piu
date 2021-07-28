@@ -41,7 +41,7 @@ const CartItem = ({id , img, title, price, discount, type }) => {
                 </select>
                 <button onClick={handleDelete} className='shopping-cart__delete-button'>usuń</button>
                 <p className='shopping-cart__price'>{type === 'cut' 
-                ? Math.round(((price - price * discount) * itemVersion * 100)/100) : Math.round(price *itemVersion*100) /100}
+                ? Math.round(((itemVersion * price - price * discount) * 100)/100) : Math.round(price *itemVersion*100) /100}
                 
                 </p>
             </div>

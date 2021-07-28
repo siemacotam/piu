@@ -42,7 +42,7 @@ const ShoppingCart = () => {
 
     useEffect(() => { window.scrollTo(0,0)}, [])
     
-
+console.log(shoppingCart.map(item => Math.round(item.version * item.price )))
     return ( 
         <>
             <nav>
@@ -55,13 +55,10 @@ const ShoppingCart = () => {
                     {itemsElements}
                 </ul>
             </nav>
-            {shoppingCart.length > 0 
-            ?   <div className='shopping-cart__payment-panel'>
+            {shoppingCart.length && <div className='shopping-cart__payment-panel'>
                     <p>Łączna kwota:</p> <p>{Math.round(orderSummary *100) /100} zł </p>
                     <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
-                </div>
-                : null
-            }
+                </div>}
         </>
      );
 }
