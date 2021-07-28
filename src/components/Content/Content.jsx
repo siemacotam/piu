@@ -9,6 +9,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart';
 import Checkout from '../Checkout/Checkout';
 import Search from '../Search/Search';
 import Contact from '../Contact/Contact';
+import UserDataPanel from '../UserDataPanel/UserDataPanel';
  
 import './Content.css';
 
@@ -31,6 +32,7 @@ const Content = () => {
                 <Route path='/checkout' render={() => <Checkout/>}></Route>
                 <Route path='/search' render={()=> <Search />}></Route>
                 <Route path='/contact' render ={() => <Contact />}></Route>
+                <Route path='/user-account' render ={() => <UserDataPanel />}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>
         </main>

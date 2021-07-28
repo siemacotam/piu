@@ -23,7 +23,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
                 <nav>
                     <ul>
                         <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje gry</Link> </li>
-                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje dane</Link> </li>
+                        <li><Link onClick={hideMenu} className='aside-menu__link' to='/user-account'>Moje dane</Link> </li>
                     </ul>
                 </nav> 
             </>

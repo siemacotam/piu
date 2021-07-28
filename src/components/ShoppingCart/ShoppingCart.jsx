@@ -15,7 +15,7 @@ const ShoppingCart = () => {
 
     const itemsElements = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
 
-    const allItemsPrices = shoppingCart.map(item => Math.round(item.amount * item.price * 100) / 100)
+    const allItemsPrices = shoppingCart.map(item => Math.round(item.version * item.price * 100) / 100)
 
     const  orderSummary = shoppingCart.length > 0 ?
     allItemsPrices.reduce((a,b) => a+b)

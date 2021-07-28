@@ -14,6 +14,24 @@
     /* border-radius: 5px; */
 }
 
+.item-card__head-new {
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: greenyellow;
+    margin-bottom: 15px;
+}
+
+.item-card__head-cut {
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: green;
+    margin-bottom: 15px;
+}
+
 .item-card__info {
     font-weight: bold;
     text-align: right;
