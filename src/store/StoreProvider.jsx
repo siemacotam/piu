@@ -149,7 +149,9 @@ export const itemsData = [
 export const usersData = [
     {
       accessLevel: 0,
-      budget: 150,
+      name: 'jacek',
+      email: 'gg@gg.pl',
+      phone: 231254151,
       items: [
         itemsData[0].id,
         itemsData[1].id,
@@ -160,7 +162,9 @@ export const usersData = [
     },
     {
       accessLevel: 1,
-      budget: 1000000,
+      name:'God',
+      email:'wp@wp.pl',
+      phone: 214214214214,
       items: [
         itemsData.map(dress => dress.id)
       ],
