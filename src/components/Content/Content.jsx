@@ -10,7 +10,10 @@ import Checkout from '../Checkout/Checkout';
 import Search from '../Search/Search';
 import Contact from '../Contact/Contact';
 import UserDataPanel from '../UserDataPanel/UserDataPanel';
- 
+import Promotions from '../Promotions/Promotions';
+import NewItems from '../NewItems/NewItems'; 
+import FreeGames from '../FreeGames/FreeGames';
+
 import './Content.css';
 
 const ADMIN_TYPE = 1;
@@ -32,6 +35,9 @@ const Content = () => {
                 <Route path='/checkout' render={() => <Checkout/>}></Route>
                 <Route path='/search' render={()=> <Search />}></Route>
                 <Route path='/contact' render ={() => <Contact />}></Route>
+                <Route path='/new' render ={() => <NewItems/>}></Route>
+                <Route path='/free-games' render ={() => <FreeGames/>}></Route>
+                <Route path='/promotions' render ={() => <Promotions />}></Route>
                 <Route path='/user-account' render ={() => <UserDataPanel />}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>

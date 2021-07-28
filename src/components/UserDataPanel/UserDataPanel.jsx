@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { StoreContext } from '../../store/StoreProvider';
 
 const UserDataPanel = () => {
+    const { user } = useContext(StoreContext)
+
     return ( 
         <div>
-            user
+            <p> Witaj {user[0].login}</p>
         </div>
      );
 }

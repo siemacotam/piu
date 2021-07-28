@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { StoreContext } from '../../store/StoreProvider';
+import { itemsData, StoreContext, usersData } from '../../store/StoreProvider';
 import CartItem from './subcomponent/CartItem';
 
 
@@ -9,9 +9,28 @@ import './ShoppingCart.css'
 
 
 const ShoppingCart = () => {
+
+    const { user } = useContext(StoreContext)
    
 
     const { shoppingCart,setShoppingCart } = useContext(StoreContext)
+
+    // const userHaveItems = user? user[0].items.map( i => i) : ''
+    // const itemsInCart = shoppingCart.map(i => i.id)
+    // const getDiffrence = ( userHaveItems, itemsInCart) => {
+    //     return userHaveItems
+    //     .filter(x => !itemsInCart.includes(x))
+    //     .concat(itemsInCart.filter(x => !userHaveItems.includes(x)));
+    //     // setShoppingCart()
+    // }
+    // const itemsIdToShow = getDiffrence(userHaveItems, itemsInCart)
+    // const itemsIdToShow2 = itemsData.filter(i => i.id = itemsIdToShow.map(i => i))
+    // console.log( itemsIdToShow2)
+    // console.log(itemsIdToShow)
+
+    // const unloggedCart = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
+    // const loggedCart = itemsIdToShow.map(item => <CartItem key={item.id} {...item}/>)
+    // const itemsElements =  user === null ? unloggedCart : loggedCart
 
     const itemsElements = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
 

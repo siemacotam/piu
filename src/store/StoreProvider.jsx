@@ -129,6 +129,20 @@ export const itemsData = [
       pegi:'13',
       version: 0,
       type: '',
+    },
+    {
+      id: 9,
+      img: '',
+      price: 0,
+      discount:1,
+      title: 'Memory- Celek Edition',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 0,
+      type: 'free',
     }
   ];
 

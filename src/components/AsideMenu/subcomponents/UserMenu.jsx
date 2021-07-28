@@ -10,8 +10,8 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
         <>
             <p className='aside-menu__title'>Witamy !</p>
             <Link onClick={hideMenu} className='aside-menu__link' to='/'>Oferta + rozwiń kategorie</Link>
-            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Promocje</Link>
-            <Link onClick={hideMenu} className='aside-menu__link' to='/'>Nowości</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/promotions'>Promocje</Link>
+            <Link onClick={hideMenu} className='aside-menu__link' to='/new'>Nowości</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/free-games'>Darmowe gry</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/search'>Szukaj</Link>
             <Link onClick={hideMenu} className='aside-menu__link' to='/contact'>Pomoc i kontakt</Link>
