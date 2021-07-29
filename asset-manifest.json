@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/piu/static/css/main.bd574a07.chunk.css",
-    "main.js": "/piu/static/js/main.4b3a934e.chunk.js",
-    "main.js.map": "/piu/static/js/main.4b3a934e.chunk.js.map",
+    "main.css": "/piu/static/css/main.b58cf34f.chunk.css",
+    "main.js": "/piu/static/js/main.7a6bc3a0.chunk.js",
+    "main.js.map": "/piu/static/js/main.7a6bc3a0.chunk.js.map",
     "runtime-main.js": "/piu/static/js/runtime-main.3cf01452.js",
     "runtime-main.js.map": "/piu/static/js/runtime-main.3cf01452.js.map",
     "static/js/2.dc9b9fe4.chunk.js": "/piu/static/js/2.dc9b9fe4.chunk.js",
     "static/js/2.dc9b9fe4.chunk.js.map": "/piu/static/js/2.dc9b9fe4.chunk.js.map",
     "index.html": "/piu/index.html",
-    "static/css/main.bd574a07.chunk.css.map": "/piu/static/css/main.bd574a07.chunk.css.map",
+    "static/css/main.b58cf34f.chunk.css.map": "/piu/static/css/main.b58cf34f.chunk.css.map",
     "static/js/2.dc9b9fe4.chunk.js.LICENSE.txt": "/piu/static/js/2.dc9b9fe4.chunk.js.LICENSE.txt",
     "static/media/angrybirdsmini.f5a1183c.jpg": "/piu/static/media/angrybirdsmini.f5a1183c.jpg",
     "static/media/Home.css": "/piu/static/media/bg.408cf577.jpg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.3cf01452.js",
     "static/js/2.dc9b9fe4.chunk.js",
-    "static/css/main.bd574a07.chunk.css",
-    "static/js/main.4b3a934e.chunk.js"
+    "static/css/main.b58cf34f.chunk.css",
+    "static/js/main.7a6bc3a0.chunk.js"
   ]
 }
