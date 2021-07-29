@@ -192,6 +192,7 @@ const StoreProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [isMenuOpen , setIsMenuOpen] = useState(true)
     const [shoppingCart, setShoppingCart] = useState([])
+    const [searchValue, setSearchValue] = useState('');
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
@@ -215,6 +216,8 @@ const StoreProvider = ({children}) => {
             setIsMenuOpen,
             shoppingCart,
             setShoppingCart,
+            searchValue,
+            setSearchValue,
             }}>
             {children}
         </StoreContext.Provider>

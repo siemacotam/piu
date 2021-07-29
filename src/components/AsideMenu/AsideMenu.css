@@ -8,6 +8,15 @@
     transition: .6s;
     position: relative;
 }
+.aside-menu-hide{
+    transform: translate(-100%);
+     display: none;
+}
+.aside-menu-big{
+    transform: translate(0%);
+    display: block;
+}
+
 
 .aside-menu__nav-wrapper {
     position: sticky;
@@ -44,28 +53,11 @@
     background-color: #646564;
 }
 
-.aside-menu__burger {
-    border: 1px solid black;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    position: fixed;
-    right: 5%;
-    bottom: 5%;
-    font-size: 20px;
-    background-color: white;
-    z-index: 100;
-}
-
 
 @media (min-width: 700px) {
 	.aside-menu{
         max-width: 20vw;
         transform: translate(0%);
         display: block;
-    }
-    .aside-menu__burger {
-        display: none;
     }
 }

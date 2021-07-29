@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Item from '../Item/Item';
 
@@ -6,7 +6,7 @@ import { StoreContext } from '../../store/StoreProvider';
 import './Search.css'
 
 const Search = () => {
-    const [searchValue, setSearchValue] = useState('');
+    const { searchValue, setSearchValue } = useContext(StoreContext);
     const { items } = useContext(StoreContext)
 
     const handleChange = (e) => {
@@ -14,6 +14,8 @@ const Search = () => {
         const littleLettersValue = value.toLowerCase()
         setSearchValue(littleLettersValue)
     }
+
+    // useEffect(()=>{setSearchValue('')}, [searchValue])
 
     const searchedItem = items.filter(i =>
         //  i.title.toLowerCase() === searchValue )
