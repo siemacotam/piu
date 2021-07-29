@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import {Link} from 'react-router-dom'
 
 import { StoreContext } from '../../store/StoreProvider';
 import OrdersInfo from './subcomponents/OrdersInfo';
@@ -7,7 +8,7 @@ import UserData from './subcomponents/UserData';
 const UserDataPanel = () => {
     const [isDataOpen, setIsDataOpen] = useState(false)
 
-    const { user } = useContext(StoreContext)
+    const { user, setUser } = useContext(StoreContext)
 
     const handleShowUserDataClick = () => {
         setIsDataOpen(!isDataOpen)
@@ -17,11 +18,12 @@ const UserDataPanel = () => {
 
     return ( 
         <div>
-            <p> Witaj {user[0].login}</p>
+            <p> Witaj </p>
             <p>Dane użytkownika</p>
             {isDataOpen && <UserData />}
             <button onClick={handleShowUserDataClick}>{dataButtonLabel}</button>
             <OrdersInfo />
+            <button onClick={() => setUser(null)}><Link to='/' style={{textDecoration: 'none', color: 'white'}}> Wyloguj </Link></button>
         </div>
      );
 }

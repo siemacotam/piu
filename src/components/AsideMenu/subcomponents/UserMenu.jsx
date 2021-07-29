@@ -6,6 +6,8 @@ import '../AsideMenu.css'
 
 const UserMenu = ({ isUserLogged, hideMenu }) => {
     const { isMenuOpen, setIsMenuOpen, shoppingCart } = useContext(StoreContext);
+
+    const { setUser } = useContext(StoreContext)
     return ( 
         <>
             <p className='aside-menu__title'>Witamy !</p>
@@ -24,6 +26,7 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
                     <ul>
                         <li><Link onClick={hideMenu} className='aside-menu__link' to='/my-items'>Moje gry</Link> </li>
                         <li><Link onClick={hideMenu} className='aside-menu__link' to='/user-account'>Moje dane</Link> </li>
+                        <li><Link onClick={() => {setUser(null); hideMenu()}} className='aside-menu__link' to='/'>Wyloguj</Link> </li>
                     </ul>
                 </nav> 
             </>
