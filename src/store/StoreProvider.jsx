@@ -44,7 +44,7 @@ export const itemsData = [
       distribution:'Steam',
       language:'Polska',
       pegi:'13',
-      version: 1,
+      version: 2,
       type:'cut',
       link:'/game',
     },
@@ -59,7 +59,7 @@ export const itemsData = [
       distribution:'Steam',
       language:'Polska',
       pegi:'13',
-      version: 1,
+      version: 3,
       type: 'bestseller',
       link:'/game',
     },
@@ -184,6 +184,12 @@ export const usersData = [
   ];
 
 export const usersMessages = [];
+
+export const itemValues = {
+  1: ' wersja podstawowa',
+  2: 'wersja rozszerzona',
+  3: 'full version + dodatki'
+}
   
 
 

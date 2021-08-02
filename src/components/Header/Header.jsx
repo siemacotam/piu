@@ -24,6 +24,7 @@ const Header = () => {
 
     const handleOnClick = () => {
         if (Boolean(user)) {
+            if(!isMenuOpen){hideMenu()}
             return
         } else {
             setIsModalOpen(true);
@@ -36,7 +37,8 @@ const Header = () => {
 
     const handleChangeSearchedItem = (e) => {
         const item = e.target.value
-        setSearchedItem(item)
+        const itemSmall = item.toLowerCase()
+        setSearchedItem(itemSmall)
     }
 
     let history = useHistory()
@@ -53,17 +55,18 @@ const Header = () => {
     return ( 
         <header className='header'>
             <div className='header__mainPanel'>
-                <Link to='/piu'><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
-                <h1 className='header__title'></h1>
-                <button className='header__button'><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
+                <Link to='/piu' onClick={!isMenuOpen && hideMenu}><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
+                <p className="header__title"></p>
                 <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
                 <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
+                <button className='header__button' onClick={!isMenuOpen && hideMenu}><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
             </div>
             <div className='header__searchPanel'>
                 <button className='header__searchPanel__button' onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i></button>
                 <form className='header__form' onSubmit ={handleSubmit}>
                     <label className='header__input-wrap'>
-                        <input className='header__input' type="text" placeholder='Czego szukasz?' value={searchedItem} onChange={handleChangeSearchedItem} ></input><i class="fas fa-search"></i>
+                        <i class="fas fa-search"></i>
+                        <input className='header__input' type="text" placeholder='Czego szukasz?' value={searchedItem} onChange={handleChangeSearchedItem} ></input>
                     </label>
                 </form>
             </div>

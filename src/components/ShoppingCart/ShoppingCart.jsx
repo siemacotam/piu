@@ -56,7 +56,7 @@ console.log(shoppingCart.map(item => Math.round(item.version * item.price )))
                 </ul>
             </nav>
             {shoppingCart.length && <div className='shopping-cart__payment-panel'>
-                    <p>Łączna kwota:</p> <p>{Math.round(orderSummary *100) /100} zł </p>
+                    <p>Łączna kwota:</p> <p>{(Math.round(orderSummary *100) /100).toFixed(2)} zł </p>
                     <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
                 </div>}
         </>

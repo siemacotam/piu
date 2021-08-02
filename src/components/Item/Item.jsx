@@ -4,8 +4,9 @@ import './Item.css'
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 import { useHistory } from 'react-router-dom';
+import { itemValues } from '../../store/StoreProvider';
 
-const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link}) => {
+const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link, version}) => {
     const { user, setUser, items } = useContext(StoreContext);
     const history = useHistory();
 
@@ -76,9 +77,9 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
                 <p>Dystrybucja cyfrowa:{distribution}</p>
                 <p>Wersja:{language}</p>
                 <p>PEGI:{pegi} </p>
-                {isUserContext 
-                    ? <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>
-                    : null
+                {isUserContext && <p>{itemValues[version]}</p> }
+                {isUserContext && <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>
+
                 }
                 {isButtonNeeded }
 

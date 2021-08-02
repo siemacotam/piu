@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-// import request from '../../helpers/request';
-import { StoreContext } from '../../store/StoreProvider';
-import Modal from '../Modal/Modal';
-import { usersData } from '../../store/StoreProvider';
+import React, { useContext, useState } from 'react';
+import { StoreContext } from '../../../store/StoreProvider';
+import { usersData } from '../../../store/StoreProvider'; 
 
-import './LoginForm.css'
 
-const LoginForm = ({handleOnClose, isModalOpen}) => {
+const PageLoginForm = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [validateMessage, setValidateMessage] = useState('');
@@ -15,10 +12,6 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
 
     const handleOnChangeLogin = event => setLogin(event.target.value);
     const handleOnChangePassword = event => setPassword(event.target.value);
-    const handleOnCloseModal = event => {
-        event.preventDefault();
-        handleOnClose()
-    }
 
     const resetStateOfInputs = () => {
         setLogin('');
@@ -36,24 +29,17 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
         if(userLogin.length && userPassword.length && activeUser ){
                     setUser(activeUser);
                     resetStateOfInputs();
-                    handleOnClose();
             } else {
                 setValidateMessage('zle dane');
             }
     }
 
-    useEffect(() => {
-        if(isModalOpen){
-        resetStateOfInputs();
-        }
-    },[isModalOpen]);
 
     const validateMessageComponent = validateMessage.length ?
     <p className='login-form__validate-message'>{validateMessage}</p> 
     : null;
 
     return ( 
-        <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={true} >
         <div>
             {validateMessageComponent}
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
@@ -71,12 +57,10 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
                 </div>
                 <div className="login-form__row">
                     <button className='login-form__button' type='submit'>Zaloguj</button>
-                    <button className='login-form__button' onClick={handleOnCloseModal} type='button'>Anuluj</button>
                 </div>
             </form>
             </div>
-         </Modal>
      );
 }
  
-export default LoginForm;
+export default PageLoginForm;
