@@ -28,3 +28,8 @@
 .login-form__input {
     padding: 3px;
 }
+
+.login-form__registerBox {
+    text-align: center;
+    padding: 20px;
+}

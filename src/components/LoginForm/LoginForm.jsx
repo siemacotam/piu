@@ -5,11 +5,13 @@ import Modal from '../Modal/Modal';
 import { usersData } from '../../store/StoreProvider';
 
 import './LoginForm.css'
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 const LoginForm = ({handleOnClose, isModalOpen}) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [validateMessage, setValidateMessage] = useState('');
+    const [userCanLogin, setUserCanLogin] = useState(true)
 
     const {setUser} = useContext(StoreContext);
 
@@ -54,6 +56,7 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
 
     return ( 
         <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={true} >
+        {userCanLogin ? 
         <div>
             {validateMessageComponent}
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
@@ -69,12 +72,18 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
                         <input className='login-form__input' onChange={handleOnChangePassword} type="password" value={password}/>
                     </label>
                 </div>
+                <div className='login-form__registerBox'>
+                    <p>Nie masz jeszcze konta ?</p>
+                    <button onClick={()=>{setUserCanLogin(!userCanLogin)}}>zarejestruj się</button>
+                </div>
                 <div className="login-form__row">
                     <button className='login-form__button' type='submit'>Zaloguj</button>
                     <button className='login-form__button' onClick={handleOnCloseModal} type='button'>Anuluj</button>
                 </div>
             </form>
-            </div>
+            </div>: <RegisterForm 
+            // goBack={setUserCanLogin(!userCanLogin)}
+            />}
          </Modal>
      );
 }

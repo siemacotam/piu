@@ -44,7 +44,7 @@ export const itemsData = [
       distribution:'Steam',
       language:'Polska',
       pegi:'13',
-      version: 2,
+      version: 1,
       type:'cut',
       link:'/game',
     },
@@ -59,7 +59,7 @@ export const itemsData = [
       distribution:'Steam',
       language:'Polska',
       pegi:'13',
-      version: 3,
+      version: 1,
       type: 'bestseller',
       link:'/game',
     },
@@ -158,9 +158,12 @@ export const itemsData = [
 export const usersData = [
     {
       accessLevel: 0,
-      name: 'jacek',
+      nameAndSurname: 'jacek',
       email: 'gg@gg.pl',
       phone: 231254151,
+      street: 'Migdałowa 21',
+      postCode: '62800',
+      city: 'kalisz',
       items: [
         itemsData[0].id,
         itemsData[1].id,
@@ -172,8 +175,11 @@ export const usersData = [
     },
     {
       accessLevel: 1,
-      name:'God',
+      nameAndSurname:'God',
       email:'wp@wp.pl',
+      street: 'Migdałowa 21',
+      postCode: '62800',
+      city: 'kalisz',
       phone: 214214214214,
       items: [
         itemsData.map(dress => dress.id)

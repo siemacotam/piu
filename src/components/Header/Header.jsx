@@ -50,16 +50,17 @@ const Header = () => {
         setSearchedItem('')
     }
 
-    console.log(searchedItem)
+    const buttonFunction = !isMenuOpen ? hideMenu : null
 
     return ( 
         <header className='header'>
             <div className='header__mainPanel'>
-                <Link to='/piu' onClick={!isMenuOpen && hideMenu}><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
+                <Link to='/piu'  onClick={buttonFunction} 
+                ><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
                 <p className="header__title"></p>
                 <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
                 <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
-                <button className='header__button' onClick={!isMenuOpen && hideMenu}><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
+                <button className='header__button' onClick={buttonFunction}><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
             </div>
             <div className='header__searchPanel'>
                 <button className='header__searchPanel__button' onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i></button>

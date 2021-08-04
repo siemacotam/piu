@@ -1,4 +1,4 @@
-.checkout {
+/* .checkout {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,12 +7,13 @@
     min-height: 100%;
     width: 100%;
     background-color: white;
-}
+} */
 
 .checkout__logo-panel {
     display: flex;
     border-bottom: 2px solid grey;
     margin: 10px;
+    padding-bottom: 10px;
 }
 
 .checkout__logo-title {
@@ -21,4 +22,42 @@
     align-items: center;
     font-weight: bold;
     padding-left: 10px;
+}
+
+.checkout__order-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 30px;
+}
+
+.checkout__order-status-option {
+    flex-basis: 30px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 0 5px;
+    line-height: 30px;
+}
+
+.done {
+    background-color: grey;
+    color: white;
+    border: 0px;
+}
+
+.to-do {
+    background-color: white;
+    color: black;
+}
+
+.dash {
+    height: 2px;
+    flex: 1;
+    background-color: #000;
+    margin: 0 10px;
 }
