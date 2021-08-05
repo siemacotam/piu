@@ -41,6 +41,14 @@ const ShoppingCart = () => {
     : 0
 
     useEffect(() => { window.scrollTo(0,0)}, [])
+
+    const loggedButton = <button className='shopping-cart__payment-panel__button'>
+            <Link to='/checkout/zamowienie'> Przejdź do dostawy</Link>
+        </button>
+
+    const unloggedButton = <button className='shopping-cart__payment-panel__button'>
+            <Link to='/checkout/logowanie'> Przejdź do dostawy</Link>
+        </button>
     
     return ( 
         <>
@@ -56,7 +64,7 @@ const ShoppingCart = () => {
             </nav>
             {shoppingCart.length && <div className='shopping-cart__payment-panel'>
                     <p>Łączna kwota:</p> <p>{(Math.round(orderSummary *100) /100).toFixed(2)} zł </p>
-                    <button className='shopping-cart__payment-panel__button'><Link to='/checkout'> Przejdź do dostawy</Link></button>
+                    {user ? loggedButton : unloggedButton}
                 </div>}
         </>
      );

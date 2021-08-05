@@ -1,13 +1,15 @@
-/* .checkout {
-    position: fixed;
+.checkout {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    height: 200vh;
     z-index: 100;
     min-height: 100%;
     width: 100%;
     background-color: white;
-} */
+    padding: 10px 20px;
+}
 
 .checkout__logo-panel {
     display: flex;

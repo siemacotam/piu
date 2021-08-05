@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { StoreContext } from '../../../store/StoreProvider';
 import { usersData } from '../../../store/StoreProvider'; 
 
@@ -19,6 +20,8 @@ const PageLoginForm = () => {
         setValidateMessage('');
     }
 
+    const history = useHistory()
+
     const handleOnSubmit = (event) => {
         event.preventDefault();
 
@@ -29,6 +32,7 @@ const PageLoginForm = () => {
         if(userLogin.length && userPassword.length && activeUser ){
                     setUser(activeUser);
                     resetStateOfInputs();
+                    history.push('/checkout/zamowienie')
             } else {
                 setValidateMessage('zle dane');
             }

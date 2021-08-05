@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import {Link } from 'react-router-dom'
+import {Link, Route, useHistory } from 'react-router-dom'
 import { StoreContext } from '../../store/StoreProvider';
 import logo from '../../images/logo2.png'
 import LoginQuestion from './components/LoginQuestion';
@@ -18,10 +18,8 @@ const Checkout = () => {
 
     const hideMenu = () => {setIsMenuOpen(!isMenuOpen)}
 
-    const order ={
-        items: shoppingCart,
-        time: '',
-    }
+    const history = useHistory()
+
 
     const orderStatus = 
     <div className="checkout__order-status">
@@ -41,8 +39,9 @@ const Checkout = () => {
                 <p className="checkout__logo-title">Dobrze Trafiłeś</p>
             </div>
             {user && orderStatus }
-            {!user && <LoginQuestion />}
-            {user && step ===2 && <PaymentAndDelivery />}
+
+            <Route path='/checkout/logowanie' render={() => <LoginQuestion/>}></Route>
+            <Route path='/checkout/zamowienie' render={() => <PaymentAndDelivery/>}></Route>
         </div>
      );
 }

@@ -16,7 +16,6 @@ const PaymentAndDelivery = () => {
 
     useEffect(()=>{window.scrollTo(0,0)},[])
 
-    const { nameAndSurname , street, postCode, city, email, phone } = user[0]
 
     return ( 
         <div className='PaD__wrap'>
@@ -96,14 +95,19 @@ const PaymentAndDelivery = () => {
                 </div>
                 <div>
                     <h5 className='PaD__subtitle'>3. Dane odbiorcy</h5>
-                    <RegisterForm 
-                    nameAndSurname = {nameAndSurname}
-                    street = {street}
-                    postCode = {postCode}
-                    city = {city}
-                    email = {email}
-                    phone = {phone}
-                    />
+                    {!user && <RegisterForm />}
+
+                    {user}
+
+                    {/* {user && <RegisterForm 
+                    nameAndSurname = {user[0].nameAndSurname}
+                    street = {user[0].street}
+                    postCode = {user[0].postCode}
+                    city = {user[0].city}
+                    email = {user[0].email}
+                    phone = {user[0].phone}
+                    />} */}
+
                 </div>
             </div>
         </div>

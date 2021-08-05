@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import PageLoginForm from './PageLoginForm';
 
 import './LoginQuestion.css'
+import { StoreContext } from '../../../store/StoreProvider';
+import RegisterForm from '../../RegisterForm/RegisterForm';
+import Modal from '../../Modal/Modal';
 
 const LoginQuestion = () => {
     const history = useHistory()
+
+    const { user } = useContext(StoreContext)
+
+    if(user){history.push('/shopping-cart')}
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleOnClose = () => setIsModalOpen(!isModalOpen)
+
+    const registerModal = 
+        <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={false} >
+            <RegisterForm goBack={handleOnClose} />
+        </Modal>
+
 
     return (
         <div className="AuthorizationOptionsMenu">
@@ -16,13 +33,14 @@ const LoginQuestion = () => {
                 </button>
                 <p className='login-question__title'>Nie masz konta ?</p>
                 <div className="notRegistered">
-                    <button className='login-question__guest-button' >Kontynuuj jako gość</button>
+                    <button className='login-question__guest-button'><Link to={'/checkout/zamowienie'}> Kontynuuj jako gość </Link></button>
                     <p className='login-question__dash-wrap'><span className="dash-gray"></span>lub<span className="dash-gray"></span> </p>
-                    <button className='login-question__register-button' >Załóż konto</button>
+                    <button className='login-question__register-button' onClick={handleOnClose}>Załóż konto</button>
+                    {isModalOpen && registerModal}
                 </div>
                 <div className="registered">
                     <p className='login-question__title'>Zaloguj się</p>
-                    <PageLoginForm />
+                    <PageLoginForm/>
                 </div>
                 <div className='login-question__benefits'>
                     <p className='login-question__subtitle'>Dlaczego warto mieć konto w CelGames</p>
