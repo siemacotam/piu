@@ -5,26 +5,26 @@ import { StoreContext, usersData } from '../../../store/StoreProvider';
 
 
 const UserData = () => {
-    const { user, setUser } = useContext(StoreContext)
+    const { user } = useContext(StoreContext)
+
+    const { login, nameAndSurname , street, postCode, city, email, phone } = user[0]
 
     const[changeData, setChangeData] = useState(true)
-    const[name, setName] = useState(user[0].name)
-    const[email, setEmail] = useState(user[0].email)
-    const[phone, setPhone] = useState(user[0].phone)
+    const[name, setName] = useState(nameAndSurname)
+    const[mail, setMail] = useState(email)
+    const[phoneNumb, setPhoneNumb] = useState(phone)
 
-    // const { user, setUser } = useContext(StoreContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         const newDataUser = user[0]
-        newDataUser.name = name
+        newDataUser.nameAndSurname = nameAndSurname
         newDataUser.email = email
         newDataUser.phone = phone
         
         const userIndex = usersData.findIndex(i => i.login === newDataUser.login)
         usersData.splice(userIndex , 1, newDataUser)
-        console.log(usersData)
         setChangeData(!changeData)
     }
     
@@ -35,13 +35,15 @@ const UserData = () => {
 
     const handleEmailChange = (e) => {
         const newEmail = e.target.value
-        setEmail(newEmail)
+        setMail(newEmail)
     }
 
     const handlePhoneChange = (e) => {
         const newPhone = e.target.value
-        setPhone(newPhone)
+        setPhoneNumb(newPhone)
     }
+
+
 
     return ( 
         <div className='userPanel'>
@@ -49,21 +51,21 @@ const UserData = () => {
                     <div className="">
                         <label >
                             <p>Login</p>
-                            <input className='' type="text" disabled name='login' placeholder={user[0].login} value={user[0].login}/> <br />
+                            <input className='' type="text" disabled name='login' placeholder={login} value={login}/> <br />
                         </label>
                         <label >
                             <p>Imię:</p>
-                             <input className='' disabled={changeData} type="text" placeholder={user[0].name} value={name} 
+                             <input className='' disabled={changeData} type="text" placeholder={nameAndSurname} value={name} 
                              onChange={handleNameChange}/>
                         </label>
                         <label >
                             <p>Email:</p>
-                             <input className='' disabled={changeData} type="email" placeholder={user[0].email} value={email} 
+                             <input className='' disabled={changeData} type="email" placeholder={email} value={mail} 
                              onChange={handleEmailChange}/>
                         </label>
                         <label >
                             <p>Telefon:</p>
-                             <input className='' disabled={changeData} type="number" placeholder={user[0].phone} value={phone} 
+                             <input className='' disabled={changeData} type="number" placeholder={phone} value={phoneNumb} 
                              onChange={handlePhoneChange}/>
                         </label>
                     </div>

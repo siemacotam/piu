@@ -1,0 +1,91 @@
+.login-question__back-button {
+    border: 0px;
+    background-color: #F8F8FF;
+    padding: 7px 30px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.login-question__title {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.login-question__dash-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: lightgray;
+    margin: 10px 0;
+}
+
+.dash-gray {
+    height: 2px;
+    flex: 1;
+    background-color: lightgray;
+    margin: 0 10px;
+}
+
+.notRegistered  {
+    text-align: center;
+}
+
+.login-question__guest-button {
+    border: 0px;
+    background-color: #1569f1;
+    color: white;
+    width: 70%;
+    padding: 10px 0;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.login-question__register-button {
+    border: 1px solid #1569f1;
+    background-color: white;
+    color: #1569f1;
+    width: 70%;
+    padding: 10px 0;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.registered {
+    border: 1px solid lightgray;
+    padding: 30px 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.login-question__subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.login-question__benefits{
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-question__benefit {
+    height: 10vh;
+    display: flex;
+}
+
+.login-question__benefit-icon{
+    flex-basis: 20%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-question__benefit-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:20px ;
+}

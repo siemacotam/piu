@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../../store/StoreProvider';
 import BannerItem from './subcomponents/BannerItem';
-import {logo} from '../../images/mariosmall.png'
 
 import './Home.css'
 

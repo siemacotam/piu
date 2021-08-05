@@ -72,17 +72,17 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
                         <input className='login-form__input' onChange={handleOnChangePassword} type="password" value={password}/>
                     </label>
                 </div>
-                <div className='login-form__registerBox'>
-                    <p>Nie masz jeszcze konta ?</p>
-                    <button onClick={()=>{setUserCanLogin(!userCanLogin)}}>zarejestruj się</button>
-                </div>
                 <div className="login-form__row">
                     <button className='login-form__button' type='submit'>Zaloguj</button>
                     <button className='login-form__button' onClick={handleOnCloseModal} type='button'>Anuluj</button>
                 </div>
+                <div className='login-form__registerBox'>
+                    <p>Nie masz jeszcze konta ?</p>
+                    <button onClick={()=>{setUserCanLogin(!userCanLogin)}}>zarejestruj się</button>
+                </div>
             </form>
             </div>: <RegisterForm 
-            // goBack={setUserCanLogin(!userCanLogin)}
+            goBack={() => {setUserCanLogin(!userCanLogin)}}
             />}
          </Modal>
      );

@@ -3,12 +3,10 @@ import React, { useContext } from 'react';
 import './Item.css'
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
-import { useHistory } from 'react-router-dom';
 import { itemValues } from '../../store/StoreProvider';
 
 const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link, version}) => {
-    const { user, setUser, items } = useContext(StoreContext);
-    const history = useHistory();
+    const { user, items } = useContext(StoreContext);
 
     const { shoppingCart, setShoppingCart } = useContext(StoreContext)
     // const allAuthors = authors.join(', ')

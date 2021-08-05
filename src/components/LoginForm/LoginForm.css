@@ -26,7 +26,14 @@
 }
 
 .login-form__input {
-    padding: 3px;
+    padding: 5px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.login-form__input:focus {
+    border: 0px;
+    padding: 5px;
 }
 
 .login-form__registerBox {

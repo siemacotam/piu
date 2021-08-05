@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../../../store/StoreProvider';
 import RegisterForm from '../../RegisterForm/RegisterForm';
 
@@ -14,7 +14,7 @@ const PaymentAndDelivery = () => {
         setPaymentMethod(paymentOption)
     }
 
-    const optionStyle = 'PaD__option checked'
+    useEffect(()=>{window.scrollTo(0,0)},[])
 
     const { nameAndSurname , street, postCode, city, email, phone } = user[0]
 

@@ -5,7 +5,7 @@ import { StoreContext } from '../../../store/StoreProvider';
 import '../AsideMenu.css'
 
 const UserMenu = ({ isUserLogged, hideMenu }) => {
-    const { isMenuOpen, setIsMenuOpen, shoppingCart } = useContext(StoreContext);
+    const { isMenuOpen, shoppingCart } = useContext(StoreContext);
 
     const unlogClick = () => {
         setUser(null); 

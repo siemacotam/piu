@@ -70,7 +70,7 @@ const RegisterForm = ({
                     <button className='' type='submit'>{buttonLabel}</button>
                 </div>
             </form>
-            {/* <button onClick={goBack}>wróć</button> */}
+            <button onClick={goBack}>wróć</button>
         </div>
      );
 }

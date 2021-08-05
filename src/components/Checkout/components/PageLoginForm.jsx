@@ -45,14 +45,12 @@ const PageLoginForm = () => {
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
                 <div className="login-form__row">
                     <label className='login-form__label'>
-                        Login:
-                        <input className='login-form__input' onChange={handleOnChangeLogin} type="text" value={login}/>
+                        <input className='login-form__input' placeholder={'Login'} onChange={handleOnChangeLogin} type="text" value={login}/>
                     </label>
                 </div>
                 <div className="login-form__row">
                 <label className='login-form__label'>
-                    Hasło:
-                        <input className='login-form__input' onChange={handleOnChangePassword} type="password" value={password}/>
+                        <input className='login-form__input' placeholder={'Hasło'} onChange={handleOnChangePassword} type="password" value={password}/>
                     </label>
                 </div>
                 <div className="login-form__row">
