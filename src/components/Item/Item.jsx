@@ -9,7 +9,6 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
     const { user, items } = useContext(StoreContext);
 
     const { shoppingCart, setShoppingCart } = useContext(StoreContext)
-    // const allAuthors = authors.join(', ')
     const isUserLogged = Boolean(user);
 
     const handleOnClick = () => {
@@ -56,7 +55,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
 
     const userItems = user === null
     ? ''
-    : user[0].items.filter(i => i === id )
+    : user.items.filter(i => i === id )
         
     const isButtonNeeded = userItems.length === 1 
     ? isUserContext? null : <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>

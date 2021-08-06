@@ -9,7 +9,7 @@ const UserAccount = () => {
     const { user, items } = useContext(StoreContext)
 
     const buyedItems = items
-    .filter( item => user[0].items.includes(item.id))
+    .filter( item => user.items.includes(item.id))
     .map(item => <Item isUserContext={true} key={item.id} {...item}/>)
 
     return ( 

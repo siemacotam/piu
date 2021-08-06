@@ -205,6 +205,7 @@ const StoreProvider = ({children}) => {
     const [isMenuOpen , setIsMenuOpen] = useState(true)
     const [shoppingCart, setShoppingCart] = useState([])
     const [searchValue, setSearchValue] = useState('');
+    const [registerOption, setRegisterOption] = useState(1)
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
@@ -230,6 +231,8 @@ const StoreProvider = ({children}) => {
             setShoppingCart,
             searchValue,
             setSearchValue,
+            registerOption,
+            setRegisterOption,
             }}>
             {children}
         </StoreContext.Provider>

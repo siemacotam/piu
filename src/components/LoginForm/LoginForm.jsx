@@ -5,15 +5,15 @@ import Modal from '../Modal/Modal';
 import { usersData } from '../../store/StoreProvider';
 
 import './LoginForm.css'
-import RegisterForm from '../RegisterForm/RegisterForm';
+import { Link } from 'react-router-dom';
 
 const LoginForm = ({handleOnClose, isModalOpen}) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [validateMessage, setValidateMessage] = useState('');
-    const [userCanLogin, setUserCanLogin] = useState(true)
 
     const {setUser} = useContext(StoreContext);
+    const { registerOption, setRegisterOption } = useContext(StoreContext);
 
     const handleOnChangeLogin = event => setLogin(event.target.value);
     const handleOnChangePassword = event => setPassword(event.target.value);
@@ -36,7 +36,7 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
         const activeUser = usersData.filter(user => user.login === login && user.password=== password ? user : null)
 
         if(userLogin.length && userPassword.length && activeUser ){
-                    setUser(activeUser);
+                    setUser(activeUser[0]);
                     resetStateOfInputs();
                     handleOnClose();
             } else {
@@ -56,7 +56,6 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
 
     return ( 
         <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={true} >
-        {userCanLogin ? 
         <div>
             {validateMessageComponent}
             <form className='login-form' method='post' onSubmit={handleOnSubmit}>
@@ -78,12 +77,10 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
                 </div>
                 <div className='login-form__registerBox'>
                     <p>Nie masz jeszcze konta ?</p>
-                    <button onClick={()=>{setUserCanLogin(!userCanLogin)}}>zarejestruj się</button>
+                    <button onClick={() =>{handleOnClose(); setRegisterOption(1) }}><Link to={'/rejestracja'}> zarejestruj się</Link></button>
                 </div>
             </form>
-            </div>: <RegisterForm 
-            goBack={() => {setUserCanLogin(!userCanLogin)}}
-            />}
+            </div>
          </Modal>
      );
 }

@@ -7,7 +7,10 @@ import './PaymentAndDelivery.css'
 
 const PaymentAndDelivery = () => {
     const [paymentMethod, setPaymentMethod] = useState('blik')
+    const [changeAdress, setChangeAdress] = useState(false)
     const { user } = useContext(StoreContext)
+    const { registerOption, setRegisterOption } = useContext(StoreContext);
+
 
     const handleChange = (e) => {
         const paymentOption = e.target.name
@@ -16,6 +19,29 @@ const PaymentAndDelivery = () => {
 
     useEffect(()=>{window.scrollTo(0,0)},[])
 
+    // const adressInfo =
+    // <div>
+    //     <p>{user.nameAndSurname}</p>
+    //     <p>{user.street}</p>
+    //     <p>{user.postCode}</p>
+    //     <p>{user.city}</p>
+    //     <p>{user.email}</p>
+    //     <p>{user.phone}</p>
+    //     <button onClick={() =>{setChangeAdress(!changeAdress); setRegisterOption(4);}}>Zmień dane do wysyłki</button>
+    // </div>
+
+    // const changeAdressInfo = 
+    // <>
+    //     <RegisterForm 
+    //         nameAndSurname = {user.nameAndSurname}
+    //         street = {user.street}
+    //         postCode = {user.postCode}
+    //         city = {user.city}
+    //         email = {user.email}
+    //         phone = {user.phone}
+    //     />
+    // </>
+    
 
     return ( 
         <div className='PaD__wrap'>
@@ -95,18 +121,28 @@ const PaymentAndDelivery = () => {
                 </div>
                 <div>
                     <h5 className='PaD__subtitle'>3. Dane odbiorcy</h5>
-                    {!user && <RegisterForm />}
+                    {!user && registerOption === 2 && <RegisterForm />}
+                    {user && changeAdress ? 
+                    <RegisterForm 
+                    nameAndSurname = {user.nameAndSurname}
+                    street = {user.street}
+                    postCode = {user.postCode}
+                    city = {user.city}
+                    email = {user.email}
+                    phone = {user.phone}
+                    setChangeAdress = {setChangeAdress}
+                    /> : null}
 
-                    {user}
-
-                    {/* {user && <RegisterForm 
-                    nameAndSurname = {user[0].nameAndSurname}
-                    street = {user[0].street}
-                    postCode = {user[0].postCode}
-                    city = {user[0].city}
-                    email = {user[0].email}
-                    phone = {user[0].phone}
-                    />} */}
+                    {user && !changeAdress 
+                    ? <div>
+                    <p>{user.nameAndSurname}</p>
+                    <p>{user.street}</p>
+                    <p>{user.postCode}</p>
+                    <p>{user.city}</p>
+                    <p>{user.email}</p>
+                    <p>{user.phone}</p>
+                    <button onClick={() =>{setChangeAdress(!changeAdress); setRegisterOption(4);}}>Zmień dane do wysyłki</button>
+                </div> : null }
 
                 </div>
             </div>

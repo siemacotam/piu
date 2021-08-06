@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 
@@ -18,6 +18,7 @@ import Home from '../Home/Home';
 import './Content.css';
 import Game from '../Game/Game';
 import Memory from '../Game/Memory';
+import RegisterForm from '../RegisterForm/RegisterForm';
 
 const ADMIN_TYPE = 1;
 
@@ -26,7 +27,7 @@ const Content = () => {
     const { user } = useContext(StoreContext);
 
     const isUserLogged = Boolean(user);
-    const isAdmin = user && user[0].accessLevel === ADMIN_TYPE;
+    const isAdmin = user && user.accessLevel === ADMIN_TYPE;
 
     return ( 
         <main className={isMenuOpen ? 'content' : 'none'}>
@@ -45,6 +46,7 @@ const Content = () => {
                 <Route path='/free-games' render ={() => <FreeGames/>}></Route>
                 <Route path='/promotions' render ={() => <Promotions />}></Route>
                 <Route path='/user-account' render ={() => <UserDataPanel />}></Route>
+                <Route path='/rejestracja' render ={() => <RegisterForm />}></Route>
                 <Redirect to='/'></Redirect>
             </Switch>
         </main>

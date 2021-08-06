@@ -1,76 +1,185 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
+import { usersData } from '../../store/StoreProvider';
+
+import './RegisterForm.css'
 
 const RegisterForm = ({
-    login = 'login',
-    password ='password',
-    nameAndSurname = 'Imię i nazwisko lub nazwa firmy',
-    street = 'Ulica i numer',
-    postCode = 'Kod pocztowy',
-    city = 'Miejscowość',
-    email = 'E-mail',
-    phone = 'Telefon',
-    goBack,
+    login = '',
+    password ='',
+    nameAndSurname = '',
+    street = '',
+    postCode = '',
+    city = '',
+    email = '',
+    phone = '',
+    setChangeAdress,
 }) => {
 
-    const { user } = useContext(StoreContext)
+    // const { nameAndSurname, adress, postcode, city, email, phone} = user
+
+    const [userLogin, setUserLogin] = useState(login);
+    const [userPassword, setUserPassword] = useState(password);
+    const [userName, setUserName] = useState(nameAndSurname);
+    const [userAdress, setUserAdress] = useState(street)
+    const [userPostcode, setUserPostcode] = useState(postCode);
+    const [userCity, setUserCity] = useState(city);
+    const [userEmail, setUserEmail] = useState(email);
+    const [userPhone, setUserPhone] = useState(phone);
+
+    const { user, setUser } = useContext(StoreContext);
+    const { registerOption } = useContext(StoreContext);
+
+    const history = useHistory()
+
+    const whereToGoNext = () => {
+        if(registerOption === 1){
+            history.push('/')
+        }  else if( registerOption === 3 ){
+            history.push('/checkout/zamowienie')
+        } else if (registerOption === 4){
+            // setUserName(user.nameAndSurname);
+            // setUserAdress(user.adress);
+            // setUserPostcode(user.postcode);
+            // setUserCity(user.city);
+            // setUserEmail(user.email);
+            // setUserPhone(user.phone);
+        }
+        
+    }
+
+    const handleLoginChange = (e) => {
+        const data = e.target.value;
+        setUserLogin(data)
+    }
+    const handlePasswordChange = (e) => {
+        const data = e.target.value;
+        setUserPassword(data)
+    }
+    const handleNameChange = (e) => {
+        const data = e.target.value;
+        setUserName(data)
+    }
+    const handleAdressChange = (e) => {
+        const data = e.target.value;
+        setUserAdress(data)
+    }
+    const handlePostcodeChange = (e) => {
+        const data = e.target.value;
+        setUserPostcode(data)
+    }
+    const handleCityChange = (e) => {
+        const data = e.target.value;
+        setUserCity(data)
+    }
+    const handleEmailChange = (e) => {
+        const data = e.target.value;
+        setUserEmail(data)
+    }
+    const handlePhoneChange = (e) => {
+        const data = e.target.value;
+        setUserPhone(data)
+    }
 
     const loginInput = 
     <div className="">
-        <label className=''>
-            <input className='' placeholder={login} onChange={() => {}} type="text" value={''}/>
+        <label className=''>Login:
+            <input className='register__input' placeholder={login} onChange={handleLoginChange} type="text" value={userLogin}/>
         </label>
     </div>
 
     const passwordInput = 
     <div className="">
-        <label className=''>
-            <input className='' placeholder={password} onChange={() => {}} type="password" value={''}/>
+        <label className=''>Hasło:
+            <input className='register__input' placeholder={password} onChange={handlePasswordChange} type="password" value={userPassword}/>
         </label>
     </div>
 
-    const buttonLabel = user ? 'Przejdź do podsumowania' : 'Zarejestruj'
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const newUser = {
+            accessLevel: 0,
+            nameAndSurname: userName,
+            email: userEmail,
+            phone: userPhone,
+            street: userAdress,
+            postCode: userPostcode,
+            city: userCity,
+            items: [],
+            login: userLogin,
+            password: userPassword,
+        }
+
+        if(!user){
+            usersData.push(newUser);
+            setUser(newUser)
+            whereToGoNext()
+        } else {
+            // usersData.push(newUser);
+            // setUser(newUser)
+            // whereToGoNext()
+
+            const newDataUser = user
+            newDataUser.nameAndSurname = userName
+            newDataUser.email = userEmail
+            newDataUser.phone = userPhone
+            newDataUser.adress = userAdress
+            newDataUser.postcode = userPostcode
+            newDataUser.city = userCity
+            
+            const userIndex = usersData.findIndex(i => i.login === newDataUser.login)
+            usersData.splice(userIndex , 1, newDataUser)
+            setUser(newDataUser)
+            whereToGoNext()
+            setChangeAdress(false)
+        }
+    }
+
+    console.log(registerOption)
+
+    const buttonLabel = user || registerOption === 2 ? 'Zapisz zmiany' : 'Zarejestruj'
 
     return ( 
-        <div>
-            <form className='' method='post' onSubmit={() => {}}>
+        <div className='register'>
+            <form className='' method='post' onSubmit={handleSubmit}>
                 {!user && loginInput}
                 {!user && passwordInput}
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={nameAndSurname} onChange={() => {}} type="text" value={''}/>
+                    <label className='register__label'>Imię i nazwisko lub nazwa firmy:
+                        <input className='register__input' placeholder={nameAndSurname} onChange={handleNameChange} type="text" value={userName}/>
                     </label>
                 </div>
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={street} onChange={() => {}} type="text" value={''}/>
+                    <label className=''>Adres:
+                        <input className='register__input' placeholder={street} onChange={handleAdressChange} type="text" value={userAdress}/>
                     </label>
                 </div>
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={postCode} onChange={() => {}} type="text" value={''}/>
+                    <label className=''>Kod pocztowy:
+                        <input className='register__input' placeholder={postCode} onChange={handlePostcodeChange} type="text" value={userPostcode}/>
                     </label>
                 </div>
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={city} onChange={() => {}} type="text" value={''}/>
+                    <label className=''>Miasto:
+                        <input className='register__input' placeholder={city} onChange={handleCityChange} type="text" value={userCity}/>
                     </label>
                 </div>
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={email} onChange={() => {}} type="text" value={''}/>
+                    <label className=''>Email:
+                        <input className='register__input' placeholder={email} onChange={handleEmailChange} type="text" value={userEmail}/>
                     </label>
                 </div>
                 <div className="">
-                    <label className=''>
-                        <input className='' placeholder={phone} onChange={() => {}} type="text" value={''}/>
+                    <label className=''>Numer telefonu:
+                        <input className='register__input' placeholder={phone} onChange={handlePhoneChange} type="text" value={userPhone}/>
                     </label>
                 </div>
-                <div className="">
-                    <button className='' type='submit'>{buttonLabel}</button>
+                <div className="register__button-wrap">
+                    <button className='register__button' type='submit'>{buttonLabel}</button>
                 </div>
             </form>
-            <button onClick={goBack}>wróć</button>
         </div>
      );
 }

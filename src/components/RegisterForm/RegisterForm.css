@@ -1,0 +1,25 @@
+.register {
+}
+
+.register__input {
+    padding: 4px 0 4px 10px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.register__input:focus {
+    outline: none;
+}
+
+.register__button-wrap {
+    text-align: center;
+}
+
+.register__button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: lightgray;
+    border: 0px;
+    width: 50%;
+}

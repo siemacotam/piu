@@ -15,7 +15,7 @@ const AsideMenu = () => {
 
     const sectionStyle = isMenuOpen ? 'aside-menu aside-menu-hide' : 'aside-menu aside-menu-big'
  
-    const adminMenuComponent = user && user[0].accessLevel === ADMIN_TYPE
+    const adminMenuComponent = user && user.accessLevel === ADMIN_TYPE
     ? <AdminMenu hideMenu={hideMenu} />
     : null;
 

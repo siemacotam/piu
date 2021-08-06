@@ -7,7 +7,7 @@ import { StoreContext, usersData } from '../../../store/StoreProvider';
 const UserData = () => {
     const { user } = useContext(StoreContext)
 
-    const { login, nameAndSurname , street, postCode, city, email, phone } = user[0]
+    const { login, nameAndSurname , street, postCode, city, email, phone } = user
 
     const[changeData, setChangeData] = useState(true)
     const[name, setName] = useState(nameAndSurname)
@@ -18,7 +18,7 @@ const UserData = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const newDataUser = user[0]
+        const newDataUser = user
         newDataUser.nameAndSurname = nameAndSurname
         newDataUser.email = email
         newDataUser.phone = phone

@@ -6,23 +6,14 @@ import PageLoginForm from './PageLoginForm';
 
 import './LoginQuestion.css'
 import { StoreContext } from '../../../store/StoreProvider';
-import RegisterForm from '../../RegisterForm/RegisterForm';
-import Modal from '../../Modal/Modal';
 
 const LoginQuestion = () => {
     const history = useHistory()
 
     const { user } = useContext(StoreContext)
+    const { setRegisterOption } = useContext(StoreContext);
 
     if(user){history.push('/shopping-cart')}
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const handleOnClose = () => setIsModalOpen(!isModalOpen)
-
-    const registerModal = 
-        <Modal handleOnClose={handleOnClose} isOpen={isModalOpen} shouldBeClouseOnOutsideClick={false} >
-            <RegisterForm goBack={handleOnClose} />
-        </Modal>
 
 
     return (
@@ -33,10 +24,9 @@ const LoginQuestion = () => {
                 </button>
                 <p className='login-question__title'>Nie masz konta ?</p>
                 <div className="notRegistered">
-                    <button className='login-question__guest-button'><Link to={'/checkout/zamowienie'}> Kontynuuj jako gość </Link></button>
+                    <button className='login-question__guest-button' onClick={()=>{setRegisterOption(2)}}><Link to={'/checkout/zamowienie'}> Kontynuuj jako gość </Link></button>
                     <p className='login-question__dash-wrap'><span className="dash-gray"></span>lub<span className="dash-gray"></span> </p>
-                    <button className='login-question__register-button' onClick={handleOnClose}>Załóż konto</button>
-                    {isModalOpen && registerModal}
+                    <button className='login-question__register-button' onClick={()=>{setRegisterOption(3)}}><Link to={'/rejestracja'}>Załóż konto</Link></button>
                 </div>
                 <div className="registered">
                     <p className='login-question__title'>Zaloguj się</p>

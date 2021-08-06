@@ -15,7 +15,7 @@ const ShoppingCart = () => {
 
     const { shoppingCart,setShoppingCart } = useContext(StoreContext)
 
-    // const userHaveItems = user? user[0].items.map( i => i) : ''
+    // const userHaveItems = user? user.items.map( i => i) : ''
     // const itemsInCart = shoppingCart.map(i => i.id)
     // const getDiffrence = ( userHaveItems, itemsInCart) => {
     //     return userHaveItems
@@ -49,6 +49,8 @@ const ShoppingCart = () => {
     const unloggedButton = <button className='shopping-cart__payment-panel__button'>
             <Link to='/checkout/logowanie'> Przejdź do dostawy</Link>
         </button>
+
+        console.log(user)
     
     return ( 
         <>
