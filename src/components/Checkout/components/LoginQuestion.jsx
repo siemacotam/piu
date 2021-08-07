@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -8,13 +8,11 @@ import './LoginQuestion.css'
 import { StoreContext } from '../../../store/StoreProvider';
 
 const LoginQuestion = () => {
-    const history = useHistory()
-
     const { user } = useContext(StoreContext)
     const { setRegisterOption } = useContext(StoreContext);
 
+    const history = useHistory()
     if(user){history.push('/shopping-cart')}
-
 
     return (
         <div className="AuthorizationOptionsMenu">

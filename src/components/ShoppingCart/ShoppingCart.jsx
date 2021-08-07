@@ -5,7 +5,9 @@ import { itemsData, StoreContext, usersData } from '../../store/StoreProvider';
 import CartItem from './subcomponent/CartItem';
 
 
-import './ShoppingCart.css'
+import './ShoppingCart.css';
+
+export let orderPrice = '';
 
 
 const ShoppingCart = () => {
@@ -50,7 +52,9 @@ const ShoppingCart = () => {
             <Link to='/checkout/logowanie'> Przejdź do dostawy</Link>
         </button>
 
-        console.log(user)
+    const totalPrice = (Math.round(orderSummary *100) /100).toFixed(2)
+    orderPrice = totalPrice
+
     
     return ( 
         <>

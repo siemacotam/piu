@@ -172,6 +172,7 @@ export const usersData = [
       ],
       login: 'user',
       password: 'user',
+      orders: [],
     },
     {
       accessLevel: 1,
@@ -186,8 +187,11 @@ export const usersData = [
       ],
       login: 'Admin',
       password: '******',
+      orders: [],
     }
   ];
+
+export const orders = [];
 
 export const usersMessages = [];
 
@@ -205,7 +209,9 @@ const StoreProvider = ({children}) => {
     const [isMenuOpen , setIsMenuOpen] = useState(true)
     const [shoppingCart, setShoppingCart] = useState([])
     const [searchValue, setSearchValue] = useState('');
-    const [registerOption, setRegisterOption] = useState(1)
+    const [registerOption, setRegisterOption] = useState(0);
+    const [orderId, setOrderId] = useState(1);
+    const [unregisteredUser, setUnregisteredUser] = useState(null);
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
@@ -233,6 +239,10 @@ const StoreProvider = ({children}) => {
             setSearchValue,
             registerOption,
             setRegisterOption,
+            orderId,
+            setOrderId,
+            unregisteredUser,
+            setUnregisteredUser,
             }}>
             {children}
         </StoreContext.Provider>

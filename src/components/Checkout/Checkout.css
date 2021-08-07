@@ -3,12 +3,11 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 200vh;
     z-index: 100;
     min-height: 100%;
     width: 100%;
     background-color: white;
-    padding: 10px 20px;
+    padding: 10px 7px;
 }
 
 .checkout__logo-panel {
@@ -46,15 +45,15 @@
     line-height: 30px;
 }
 
+.to-do {
+    background-color: white;
+    color: black;
+}
+
 .done {
     background-color: grey;
     color: white;
     border: 0px;
-}
-
-.to-do {
-    background-color: white;
-    color: black;
 }
 
 .dash {

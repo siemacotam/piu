@@ -15,6 +15,7 @@ const RegisterForm = ({
     email = '',
     phone = '',
     setChangeAdress,
+    handleNextStepClick,
 }) => {
 
     // const { nameAndSurname, adress, postcode, city, email, phone} = user
@@ -28,8 +29,7 @@ const RegisterForm = ({
     const [userEmail, setUserEmail] = useState(email);
     const [userPhone, setUserPhone] = useState(phone);
 
-    const { user, setUser } = useContext(StoreContext);
-    const { registerOption } = useContext(StoreContext);
+    const { user, setUser, registerOption, setUnregisteredUser } = useContext(StoreContext);
 
     const history = useHistory()
 
@@ -38,14 +38,7 @@ const RegisterForm = ({
             history.push('/')
         }  else if( registerOption === 3 ){
             history.push('/checkout/zamowienie')
-        } else if (registerOption === 4){
-            // setUserName(user.nameAndSurname);
-            // setUserAdress(user.adress);
-            // setUserPostcode(user.postcode);
-            // setUserCity(user.city);
-            // setUserEmail(user.email);
-            // setUserPhone(user.phone);
-        }
+        } 
         
     }
 
@@ -110,17 +103,25 @@ const RegisterForm = ({
             items: [],
             login: userLogin,
             password: userPassword,
+            orders: [],
         }
 
-        if(!user){
+        if(!user && registerOption === 2){
+            const userData = {
+                nameAndSurname: userName,
+                email: userEmail,
+                phone: userPhone,
+                street: userAdress,
+                postCode: userPostcode,
+                city: userCity,
+            }
+            setUnregisteredUser(userData)
+            handleNextStepClick(userData)
+        } else if(!user){
             usersData.push(newUser);
             setUser(newUser)
             whereToGoNext()
         } else {
-            // usersData.push(newUser);
-            // setUser(newUser)
-            // whereToGoNext()
-
             const newDataUser = user
             newDataUser.nameAndSurname = userName
             newDataUser.email = userEmail
@@ -137,15 +138,13 @@ const RegisterForm = ({
         }
     }
 
-    console.log(registerOption)
-
-    const buttonLabel = user || registerOption === 2 ? 'Zapisz zmiany' : 'Zarejestruj'
+    const buttonLabel = user || registerOption === 2 ? 'Zapisz' : 'Zarejestruj'
 
     return ( 
         <div className='register'>
-            <form className='' method='post' onSubmit={handleSubmit}>
-                {!user && loginInput}
-                {!user && passwordInput}
+            <form className='' method='post' id='myForm' onSubmit={handleSubmit}>
+                {(!user && registerOption !== 2) && loginInput}
+                {(!user && registerOption !== 2) && passwordInput}
                 <div className="">
                     <label className='register__label'>Imię i nazwisko lub nazwa firmy:
                         <input className='register__input' placeholder={nameAndSurname} onChange={handleNameChange} type="text" value={userName}/>
@@ -177,7 +176,7 @@ const RegisterForm = ({
                     </label>
                 </div>
                 <div className="register__button-wrap">
-                    <button className='register__button' type='submit'>{buttonLabel}</button>
+                    {registerOption !== 2 && <button className='register__button' type='submit'>{buttonLabel}</button>}
                 </div>
             </form>
         </div>
