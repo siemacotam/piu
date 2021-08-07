@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { itemsData, StoreContext, usersData } from '../../store/StoreProvider';
+import { StoreContext } from '../../store/StoreProvider';
 import CartItem from './subcomponent/CartItem';
 
 
@@ -13,7 +13,7 @@ export let orderPrice = '';
 const ShoppingCart = () => {
 
     const { user } = useContext(StoreContext)
-   
+   const { setRegisterOption } = useContext(StoreContext)
 
     const { shoppingCart,setShoppingCart } = useContext(StoreContext)
 
@@ -44,7 +44,7 @@ const ShoppingCart = () => {
 
     useEffect(() => { window.scrollTo(0,0)}, [])
 
-    const loggedButton = <button className='shopping-cart__payment-panel__button'>
+    const loggedButton = <button onClick ={() => {setRegisterOption(1)}} className='shopping-cart__payment-panel__button'>
             <Link to='/checkout/zamowienie'> Przejdź do dostawy</Link>
         </button>
 

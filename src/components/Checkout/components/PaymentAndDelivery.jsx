@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { orders, StoreContext } from '../../../store/StoreProvider';
+import { preorders, StoreContext } from '../../../store/StoreProvider';
 import RegisterForm from '../../RegisterForm/RegisterForm';
 import { orderPrice } from '../../ShoppingCart/ShoppingCart';
 
@@ -53,16 +53,14 @@ const PaymentAndDelivery = ({setStep}) => {
         acceptOpinionQuestion: opinionCheckbox,
     }
 
-    console.log(userData)
-
     const handleNextStepClick = (userData) => {
         setOrderId(prev => prev + 1)
+        if(registerOption ===2){order.user = userData}
+        preorders.push(order)
         setStep(3)
         history.push('/checkout/podsumowanie')
-        if(registerOption ===2){order.user = userData}
-        orders.push(order)
     }
-
+    
     return ( 
         <div className='PaD__wrap'>
             <h3 className='PaD__title'>Dostwa i płatność</h3>
@@ -200,7 +198,7 @@ const PaymentAndDelivery = ({setStep}) => {
                     </div>
                     <div className='PaD__button-wrap'>
                         { registerOption === 2 
-                        ?<button className='PaD__accept-button' type='submit' form='myForm'>Przejdź do podsumowania   
+                        ?<button className='PaD__accept-button' type='submit' form='myForm'>Przejdź do podsumowania
                         <i class="fas fa-chevron-right"></i></button>
                         :<button onClick ={handleNextStepClick}className='PaD__accept-button'> 
                             Przejdź do podsumowania    

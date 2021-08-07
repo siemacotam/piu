@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
 
-import logo from '../../../images/logo.png'
-import { StoreContext } from '../../../store/StoreProvider';
+import { itemValues, StoreContext } from '../../../store/StoreProvider';
 
 
-const CartItem = ({id , img, title, price, discount, type }) => {
+const CartItem = ({id , img, title, price, discount, type, summary, version }) => {
     const [itemVersion, setItemVersion] = useState(1)
 
     const { shoppingCart, setShoppingCart, items} = useContext(StoreContext)
@@ -36,12 +35,13 @@ const CartItem = ({id , img, title, price, discount, type }) => {
             <img className='shopping-cart__image' src={img} alt={title} />
             <h4 className='shopping-cart__element-title'>{title}</h4>
             <div className='shopping-cart__element-wrap'>
-                <select className='shopping-cart__element-select' value={itemVersion} onChange={handleChange}>
+                {summary && <p>{itemValues[version]}</p> }
+                {!summary && <select className='shopping-cart__element-select' value={itemVersion} onChange={handleChange}>
                     <option value="1">wersja podstawowa</option>
                     <option value="2">wersja rozszerzona</option>
                     <option value="3">full version + dodatki</option>
-                </select>
-                <button onClick={handleDelete} className='shopping-cart__delete-button'>usuń</button>
+                </select>}
+                {!summary && <button onClick={handleDelete} className='shopping-cart__delete-button'>usuń</button>}
                 <p className='shopping-cart__price'>{type === 'cut' 
                 ? itemVersion * cuttedPrice : Math.round(price *itemVersion*100) /100}
 
