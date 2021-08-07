@@ -11,6 +11,14 @@ import doom from '../images/doommini.jpg';
 import starcraft from '../images/starcraftmini.png';
 import tibia from '../images/tibiamini.jpg';
 import wolfenstein from '../images/wolfensteinmini.jpg'
+import batman from '../images/batmanmini.png'
+import fifa from '../images/fifamini.png';
+import lol from '../images/lolmini.jpg';
+import pes from '../images/pesmini.png';
+import starcraft2 from '../images/starcraft2mini.png';
+import warzone from '../images/warzonemini.png';
+import wow from '../images/wowmini.png'
+
 
 
 // import request from '../helpers/request';
@@ -152,6 +160,111 @@ export const itemsData = [
       version: 1,
       type: 'free',
       link:'/memory',
+    },
+    {
+      id: 10,
+      img: batman,
+      price: 99.99,
+      discount:1,
+      title: 'Batman forever',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: 'new',
+      link:'/game',
+    },
+    {
+      id: 11,
+      img: fifa,
+      price: 199.99,
+      discount:1,
+      title: 'Fifa 2022',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: 'new',
+      link:'/game',
+    },
+    {
+      id: 12,
+      img: lol,
+      price: 49.99,
+      discount:0.2,
+      title: 'League of legends',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: 'cut',
+      link:'/game',
+    },
+    {
+      id: 13,
+      img: pes,
+      price: 299.99,
+      discount:0.3,
+      title: 'Pro Evolution Soccer 2022',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: 'cut',
+      link:'/game',
+    },
+    {
+      id: 14,
+      img: starcraft2,
+      price: 79.99,
+      discount:1,
+      title: 'Starcraft 2',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: 'bestseller',
+      link:'/game',
+    },
+    {
+      id: 15,
+      img: warzone,
+      price: 49.99,
+      discount:1,
+      title: 'Call of duty: Warzone',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: '',
+      link:'/game',
+    },
+    {
+      id: 16,
+      img: wow,
+      price: 129.99,
+      discount:1,
+      title: 'World of Warcraft',
+      rate:[],
+      platform:'PC',
+      distribution:'',
+      language:'Polski',
+      pegi:'3+',
+      version: 1,
+      type: '',
+      link:'/game',
     }
   ];
 

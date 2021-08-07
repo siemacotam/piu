@@ -28,6 +28,9 @@ const CartItem = ({id , img, title, price, discount, type, summary, version }) =
     }
 
     const cuttedPrice =  Math.round((price - price * discount )*100)/100 
+    const summaryOrCartPrice = summary 
+    ? Math.round(price *version*100) /100
+    : Math.round(price *itemVersion*100) /100
 
     return ( 
         
@@ -43,7 +46,7 @@ const CartItem = ({id , img, title, price, discount, type, summary, version }) =
                 </select>}
                 {!summary && <button onClick={handleDelete} className='shopping-cart__delete-button'>usuń</button>}
                 <p className='shopping-cart__price'>{type === 'cut' 
-                ? itemVersion * cuttedPrice : Math.round(price *itemVersion*100) /100}
+                ? itemVersion * cuttedPrice : summaryOrCartPrice}
 
                 </p>
             </div>
