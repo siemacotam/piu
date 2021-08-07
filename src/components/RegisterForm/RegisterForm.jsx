@@ -18,8 +18,6 @@ const RegisterForm = ({
     handleNextStepClick,
 }) => {
 
-    // const { nameAndSurname, adress, postcode, city, email, phone} = user
-
     const [userLogin, setUserLogin] = useState(login);
     const [userPassword, setUserPassword] = useState(password);
     const [userName, setUserName] = useState(nameAndSurname);
@@ -38,8 +36,7 @@ const RegisterForm = ({
             history.push('/')
         }  else if( registerOption === 3 ){
             history.push('/checkout/zamowienie')
-        } 
-        
+        }  
     }
 
     const handleLoginChange = (e) => {

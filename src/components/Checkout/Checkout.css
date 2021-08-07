@@ -27,13 +27,19 @@
 
 .checkout__order-status {
     display: flex;
+    margin: 20px 20px;
+}
+
+.checkout__order-status-point {
+    flex-basis: 20%;
+    display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 20px 30px;
+    flex-direction: column;
 }
 
 .checkout__order-status-option {
-    flex-basis: 30px;
+    flex-basis: 20%;
     text-align: center;
     color: white;
     background-color: black;
@@ -56,9 +62,17 @@
     border: 0px;
 }
 
+.checkout__order-status-name {
+    font-size: 11px;
+    flex-basis: 30px;
+    text-align: center;
+    padding-top: 5px;
+}
+
 .dash {
     height: 2px;
     flex: 1;
     background-color: #000;
-    margin: 0 10px;
+    margin: 0 -8px;
+    margin-top: 16px;
 }

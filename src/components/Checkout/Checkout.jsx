@@ -31,13 +31,13 @@ const Checkout = () => {
 
     const orderStatus =
      <div className="checkout__order-status">
-         {stylesOfOption(1)}
+         <div className='checkout__order-status-point'>{stylesOfOption(1)}<p className='checkout__order-status-name'>Koszyk</p> </div>
          <span className="dash"></span>
-         {stylesOfOption(2)}
+         <div className='checkout__order-status-point'>{stylesOfOption(2)}<p className='checkout__order-status-name'>Dostawa i płatność</p> </div>
          <span className="dash"></span>
-         {stylesOfOption(3)}
+         <div className='checkout__order-status-point'>{stylesOfOption(3)}<p className='checkout__order-status-name'>Zamówienie</p> </div>
          <span className="dash"></span>
-         {stylesOfOption(4)}
+         <div className='checkout__order-status-point'>{stylesOfOption(4)}<p className='checkout__order-status-name'>Gotowe</p> </div>
     </div>
 
 
