@@ -27,15 +27,14 @@ const Home = () => {
 
     return ( 
         <div className="home-wrap">
-        <div className='home-bgContanier'></div>
             <h2 className='banner__title'>Witamy w Piu Games</h2>
-            <section className='home'>
+            {/* <section className='home'>
                 <p className='homeElement'>Szukasz najnowszych gier ?</p>
                 <p className='homeElement'>Nie wiesz jak spędzić wolny czas ?</p>
                 <p className='homeElement'>Dobrze trafiłeś!</p>
                 <p className='homeElement'>Od 10 lat łączymy środowisko gamerskie</p>
                 <p className='homeElement'>Z nami nuda nie straszna</p>
-            </section>
+            </section> */}
             <section className='items banner__items'>
                 <ul className='items__list'>
                     {itemToShow}

@@ -16,7 +16,6 @@ const UserMenu = ({ isUserLogged, hideMenu, isShopOpen, setIsShopOpen }) => {
 
     const openMenuStyles = isShopOpen ? 'aside-menu__link show' :'aside-menu__link hide'
 
-    console.log(isShopOpen)
     return ( 
         <>
             <p className='aside-menu__title'>Witamy !</p>

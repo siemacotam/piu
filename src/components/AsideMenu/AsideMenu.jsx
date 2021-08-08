@@ -21,7 +21,7 @@ const AsideMenu = () => {
     ? <AdminMenu hideMenu={hideMenu} />
     : null;
 
-    useEffect(()=>{setIsShopOpen(false); console.log('siema')},[isMenuOpen])
+    useEffect(()=>{setIsShopOpen(false)},[isMenuOpen])
 
     return ( 
         <>
