@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../../store/StoreProvider';
 
 import './AsideMenu.css'
@@ -8,6 +8,7 @@ import UserMenu from './subcomponents/UserMenu';
 const ADMIN_TYPE = 1
 
 const AsideMenu = () => {
+    const [isShopOpen, setIsShopOpen] = useState(false);
     const { user } = useContext(StoreContext);
     const { isMenuOpen , setIsMenuOpen } = useContext(StoreContext);
 
@@ -19,11 +20,13 @@ const AsideMenu = () => {
     ? <AdminMenu hideMenu={hideMenu} />
     : null;
 
+    useEffect(()=>{setIsShopOpen(false); console.log('siema')},[isMenuOpen])
+
     return ( 
         <>
         <section className={sectionStyle}>
             <div className="aside-menu__nav-wrapper">
-                <UserMenu isUserLogged={Boolean(user)} hideMenu={hideMenu} />
+                <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} />
                 {adminMenuComponent}
             </div>
         </section>

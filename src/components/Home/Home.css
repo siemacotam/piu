@@ -81,14 +81,14 @@
 }
 
 .home-bgContanier {
-    background-image: url('../../images/bg.jpg');
+    /* background-image: url('../../images/bg.jpg'); */
     position: absolute;
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
     top: 0;
     left: 0;
-    background-image: url('../../images/bg.jpg');
+    /* background-image: url('../../images/bg.jpg'); */
     opacity: 0.1;
     z-index: -1;
 }

@@ -1,11 +1,12 @@
-import React ,{ useContext } from 'react';
+import React ,{ useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { StoreContext } from '../../../store/StoreProvider';
 import '../AsideMenu.css'
 
-const UserMenu = ({ isUserLogged, hideMenu }) => {
+const UserMenu = ({ isUserLogged, hideMenu, isShopOpen, setIsShopOpen }) => {
     const { isMenuOpen, shoppingCart } = useContext(StoreContext);
+    const { setUser } = useContext(StoreContext)
 
     const unlogClick = () => {
         setUser(null); 
@@ -13,14 +14,26 @@ const UserMenu = ({ isUserLogged, hideMenu }) => {
     }
 
 
-    const { setUser } = useContext(StoreContext)
+    const openMenuStyles = isShopOpen ? 'aside-menu__link show' :'aside-menu__link hide'
+
+    console.log(isShopOpen)
     return ( 
         <>
             <p className='aside-menu__title'>Witamy !</p>
-            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/offer'>Oferta + rozwiń kategorie</Link>
-            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/promotions'>Promocje</Link>
-            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/new'>Nowości</Link>
-            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/free-games'>Darmowe gry</Link>
+            <div onClick={()=>{setIsShopOpen(!isShopOpen)}} className='aside-menu__link'>Sklep  
+            {isShopOpen 
+            ?<i className="fas fa-chevron-up iconPadding"></i>
+            : <i className="fas fa-chevron-down iconPadding"></i>}
+            </div>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer'} >Wszytskie gry</Link>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer/fps'} >FPS</Link>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer/rpg'} >RPG</Link>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer/strategie'} >STRATEGIE</Link>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer/sport'} >SPORT</Link>
+            <Link className={openMenuStyles} onClick={isMenuOpen ? null : hideMenu} to={'/offer/inne'} >INNE</Link>
+            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/offer/promotions'>Promocje</Link>
+            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/offer/new'>Nowości</Link>
+            <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/offer/free'>Darmowe gry</Link>
             <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/search'>Szukaj</Link>
             <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/contact'>Pomoc i kontakt</Link>
             <Link onClick={isMenuOpen ? null : hideMenu} className='aside-menu__link' to='/shopping-cart'>Koszyk ({shoppingCart.length})</Link>

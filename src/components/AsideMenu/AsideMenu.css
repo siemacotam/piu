@@ -53,6 +53,23 @@
     background-color: #646564;
 }
 
+.hide{
+    transform: translate(-130%);
+    display: none;
+    transition: .8s;
+}
+
+.show {
+    transform: translate(0);
+    display: block;
+    width: 60%;
+    color: black;
+}
+
+.iconPadding {
+    padding-left: 10px;
+}
+
 
 @media (min-width: 700px) {
 	.aside-menu{

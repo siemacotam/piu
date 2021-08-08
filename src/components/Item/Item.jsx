@@ -9,7 +9,6 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
     const { user, items } = useContext(StoreContext);
 
     const { shoppingCart, setShoppingCart } = useContext(StoreContext)
-    const isUserLogged = Boolean(user);
 
     const handleOnClick = () => {
     
@@ -66,7 +65,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
         <li className='item'>
             <article className='item-card'>
                 {type === 'new' ? <p className='item-card__head-new'>NOWOŚĆ</p> : null}
-                {type === 'cut' ? <p className='item-card__head-cut'>PROMOCJA -20% !</p>: null}
+                {type === 'cut' ? <p className='item-card__head-cut'>PROMOCJA -{discount * 100}% !</p>: null}
                 <img className='item-card__image' src={img} alt ={title}/>
                 <h3 className='item-card__title'>{title}</h3>
                 <p className='item-card__rate'>opinie</p>

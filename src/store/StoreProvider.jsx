@@ -40,7 +40,7 @@ export const itemsData = [
       version: 1,
       type: 'new',
       link:'/game',
-      category:'',
+      category:'rpg',
     },
     {
       id: 2,
@@ -56,7 +56,7 @@ export const itemsData = [
       version: 1,
       type:'cut',
       link:'/game',
-      category:'',
+      category:'strategy',
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ export const itemsData = [
       version: 1,
       type: 'bestseller',
       link:'/game',
-      category:'',
+      category:'strategy',
     },
     {
       id: 4,
@@ -88,7 +88,7 @@ export const itemsData = [
       version: 1,
       type: 'cut',
       link:'/game',
-      category:'',
+      category:'rpg',
     },
     {
       id: 5,
@@ -104,7 +104,7 @@ export const itemsData = [
       version: 1,
       type: 'new',
       link:'/game',
-      category:'',
+      category:'fps',
     },
     {
       id: 6,
@@ -120,7 +120,7 @@ export const itemsData = [
       version: 1,
       type: 'bestseller',
       link:'/game',
-      category:'',
+      category:'fps',
     },
     {
       id: 7,
@@ -136,7 +136,7 @@ export const itemsData = [
       version: 1,
       type: 'cut',
       link:'/game',
-      category:'',
+      category:'fps',
     },
     {
       id: 8,
@@ -152,7 +152,7 @@ export const itemsData = [
       version: 1,
       type: 'bestseller',
       link:'/game',
-      category:'',
+      category:'other',
     },
     {
       id: 9,
@@ -168,7 +168,7 @@ export const itemsData = [
       version: 1,
       type: 'free',
       link:'/memory',
-      category:'',
+      category:'other',
     },
     {
       id: 10,
@@ -184,7 +184,7 @@ export const itemsData = [
       version: 1,
       type: 'new',
       link:'/game',
-      category:'',
+      category:'other',
     },
     {
       id: 11,
@@ -200,7 +200,7 @@ export const itemsData = [
       version: 1,
       type: 'new',
       link:'/game',
-      category:'',
+      category:'sport',
     },
     {
       id: 12,
@@ -216,7 +216,7 @@ export const itemsData = [
       version: 1,
       type: 'cut',
       link:'/game',
-      category:'',
+      category:'rpg',
     },
     {
       id: 13,
@@ -232,7 +232,7 @@ export const itemsData = [
       version: 1,
       type: 'cut',
       link:'/game',
-      category:'',
+      category:'sport',
     },
     {
       id: 14,
@@ -248,7 +248,7 @@ export const itemsData = [
       version: 1,
       type: 'bestseller',
       link:'/game',
-      category:'',
+      category:'strategy',
     },
     {
       id: 15,
@@ -264,7 +264,7 @@ export const itemsData = [
       version: 1,
       type: '',
       link:'/game',
-      category:'',
+      category:'fps',
     },
     {
       id: 16,
@@ -280,7 +280,7 @@ export const itemsData = [
       version: 1,
       type: '',
       link:'/game',
-      category:'',
+      category:'rpg',
     }
   ];
 
@@ -341,6 +341,7 @@ const StoreProvider = ({children}) => {
     const [registerOption, setRegisterOption] = useState(0);
     const [orderId, setOrderId] = useState(1);
     const [unregisteredUser, setUnregisteredUser] = useState(null);
+    const [itemsFilter, setItemsFilter] = useState('')
 
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
@@ -372,6 +373,8 @@ const StoreProvider = ({children}) => {
             setOrderId,
             unregisteredUser,
             setUnregisteredUser,
+            itemsFilter,
+            setItemsFilter,
             }}>
             {children}
         </StoreContext.Provider>

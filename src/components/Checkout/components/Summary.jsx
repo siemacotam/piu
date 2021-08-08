@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import { preorders, StoreContext } from '../../../store/StoreProvider';
 import CartItem from '../../ShoppingCart/subcomponent/CartItem';
 
@@ -6,6 +7,8 @@ import './Summary.css'
 
 const Summary = () => {
     const { orderId } = useContext(StoreContext)
+
+    const history = useHistory()
     
     useEffect(()=>{window.scrollTo(0,0)},[])
 
@@ -19,6 +22,11 @@ const Summary = () => {
         } else if(preorders[orderId -2].payment === 'PRZELEW' ){
             return <i class="fas fa-money-check"></i>
         }
+    }
+
+    const handleClick = () => {
+        history.push('/bank')
+        // preorders push to orders
     }
 
     return ( 
@@ -66,7 +74,7 @@ const Summary = () => {
                         <p >{preorders[orderId -2].price} zł</p>
                     </div>
                     <div className='summary__button-wrap'>
-                        <button className='summary__accept-button'>Kupuję i płacę   
+                        <button onClick={handleClick} className='summary__accept-button'>Kupuję i płacę   
                             <i class="fas fa-chevron-right"></i> 
                         </button>
                     </div>
