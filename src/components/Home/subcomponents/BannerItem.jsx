@@ -9,8 +9,7 @@ const BannerItem = ({title, img, type, price,discount}) => {
                 <img className='item-card__image banner__img' src={img} alt ={title}/>
                 <h3 className='item-card__title'>{title}</h3>
                 <p>od {Math.round((price - price * discount )*100)/100} zł</p>
-                
-                <button className='banner__button'><Link style={{textDecoration: 'none', color: 'white', display: 'block'}} to='/offer'>przedź do sklepu</Link></button>
+                <button className='banner__button'><Link to='/offer'>przedź do sklepu</Link></button>
 
 
             </article>

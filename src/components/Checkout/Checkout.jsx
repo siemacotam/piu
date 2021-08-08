@@ -25,7 +25,7 @@ const Checkout = () => {
         } else if (step === number) {
             return <div className="checkout__order-status-option">{number}</div>
         } else if (step > number ){
-            return <div className="checkout__order-status-option done"><i className="fas fa-check-double"></i></div>
+            return <div className="checkout__order-status-option done"><i class="fas fa-check"></i></div>
         }
     }
 

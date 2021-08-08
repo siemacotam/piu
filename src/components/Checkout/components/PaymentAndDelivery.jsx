@@ -8,7 +8,7 @@ import './PaymentAndDelivery.css'
 
 
 const PaymentAndDelivery = ({setStep}) => {
-    const [paymentMethod, setPaymentMethod] = useState('blik')
+    const [paymentMethod, setPaymentMethod] = useState('BLIK')
     const [changeAdress, setChangeAdress] = useState(false)
     const [rulesCheckbox, setRulesCheckbox] = useState(false);
     const [placeCheckbox, setPlaceCheckbox] = useState(false);
@@ -49,7 +49,7 @@ const PaymentAndDelivery = ({setStep}) => {
         time: new Date().toLocaleString(),
         price: orderPrice,
         payment: paymentMethod,
-        delivery: 'email',
+        delivery: 'E-mail',
         acceptOpinionQuestion: opinionCheckbox,
     }
 
@@ -69,7 +69,7 @@ const PaymentAndDelivery = ({setStep}) => {
                     <h5 className='PaD__subtitle'>1. Sposób dostawy</h5>
                     <div className="PaD__shipment">
                         <label className='PaD__label'>
-                            <input type="checkbox" name="email" checked onChange={() => {}}/>
+                            <input type="checkbox" name="mail" checked onChange={() => {}}/>
                             <div>
                                 <div>
                                     <p>E-mail</p>
@@ -85,49 +85,49 @@ const PaymentAndDelivery = ({setStep}) => {
                 <div className='PaD__payment'>
                     <h5 className='PaD__subtitle'>2. Metoda płatoności</h5>
                     <div className="PaD__options-wrapper">
-                            <div className={paymentMethod === 'blik' ? 'PaD__option checked' : 'PaD__option'}>
+                            <div className={paymentMethod === 'BLIK' ? 'PaD__option checked' : 'PaD__option'}>
                                 <label  className='PaD__label'>
-                                    <input type="checkbox" name="blik" checked={paymentMethod === 'blik'} onChange={handleChange}/>
+                                    <input type="checkbox" name="BLIK" checked={paymentMethod === 'BLIK'} onChange={handleChange}/>
                                     <div>
-                                        <p>Blik</p>
+                                        <p>BLIK</p>
                                         <p>(bezpłatnie)</p>
                                     </div>
                                     <p><i class="fas fa-phone-square"></i></p>
                                 </label>
-                                <div className={paymentMethod === 'blik' ? 'PaD__info showInfo' : 'PaD__info'}>
+                                <div className={paymentMethod === 'BLIK' ? 'PaD__info showInfo' : 'PaD__info'}>
                                     <p>Sfinalizuj tranzakcje używając kodu BLIK.</p>
                                 </div>
                             </div>
-                            <div className={paymentMethod === 'card' ? 'PaD__option checked' : 'PaD__option'}>
+                            <div className={paymentMethod === 'KARTA' ? 'PaD__option checked' : 'PaD__option'}>
                                 <label className='PaD__label'>
-                                    <input type="checkbox" name="card" checked={paymentMethod === 'card'} onChange={handleChange}/>
+                                    <input type="checkbox" name="KARTA" checked={paymentMethod === 'KARTA'} onChange={handleChange}/>
                                     <div>
                                         <p>Karta płatnicza online</p>
                                         <p>(bezpłatnie)</p>
                                     </div>
                                     <p><i class="far fa-credit-card"></i></p>
                                 </label>
-                                <div className={paymentMethod === 'card' ? 'PaD__info showInfo' : 'PaD__info'}>
+                                <div className={paymentMethod === 'KARTA' ? 'PaD__info showInfo' : 'PaD__info'}>
                                     <p>Zostaniesz przeniesiony na stronę swojego banku gdzie sfinalizujesz tranzakcję.</p>
                                 </div>
                             </div>
-                            <div className={paymentMethod === 'transfer' ? 'PaD__option checked' : 'PaD__option'}>
+                            <div className={paymentMethod === 'PRZELEW' ? 'PaD__option checked' : 'PaD__option'}>
                                 <label className='PaD__label'>
-                                    <input type="checkbox" name="transfer" checked={paymentMethod === 'transfer'} onChange={handleChange}/>
+                                    <input type="checkbox" name="PRZELEW" checked={paymentMethod === 'PRZELEW'} onChange={handleChange}/>
                                     <div>
                                         <p>Przelew gotówkowy</p>
                                         <p>(bezpłatnie)</p>
                                     </div>
                                     <p><i class="fas fa-money-check"></i></p>
                                 </label>
-                                <div className={paymentMethod === 'transfer' ? 'PaD__info showInfo' : 'PaD__info'}>
+                                <div className={paymentMethod === 'PRZELEW' ? 'PaD__info showInfo' : 'PaD__info'}>
                                     <p>Zamówienie wyślemy, kiedy otrzymamy od Ciebie wpłatę.</p>
                                     <p>Pamiętaj, żeby w tytule przelewu wpisać numer zamówienia</p>
                                 </div>
                             </div>
                             <div className='PaD__option unabled'>
                                 <label enabled className='PaD__label'>
-                                    <input type="checkbox" name="pickup" checked={paymentMethod === 'pickup'} onChange={() => {}}/>
+                                    <input type="checkbox" name="ODBIÓR" checked={paymentMethod === 'ODBIÓR'} onChange={() => {}}/>
                                     <div>
                                         <p>Przy odbiorze</p>
                                         <p>(niedostępna)</p>

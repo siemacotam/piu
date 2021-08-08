@@ -60,6 +60,7 @@
     background-color: grey;
     color: white;
     border: 0px;
+    font-size: 11px;
 }
 
 .checkout__order-status-name {
