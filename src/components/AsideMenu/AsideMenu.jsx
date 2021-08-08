@@ -13,6 +13,7 @@ const AsideMenu = () => {
     const { isMenuOpen , setIsMenuOpen } = useContext(StoreContext);
 
     const hideMenu = () => {setIsMenuOpen(!isMenuOpen)}
+    const showMenu = () => {setIsMenuOpen(!isMenuOpen)}
 
     const sectionStyle = isMenuOpen ? 'aside-menu aside-menu-hide' : 'aside-menu aside-menu-big'
  
@@ -26,6 +27,11 @@ const AsideMenu = () => {
         <>
         <section className={sectionStyle}>
             <div className="aside-menu__nav-wrapper">
+
+            <button className='aside-menu__burger-button' 
+            onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
                 <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} />
                 {adminMenuComponent}
             </div>

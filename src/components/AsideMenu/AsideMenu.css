@@ -5,16 +5,19 @@
     width: 100%;
     background-color: #AFB2B0;
     transform: translate(-100%);
-    transition: .6s;
+    transition: .8s;
     position: relative;
 }
 .aside-menu-hide{
-    transform: translate(-100%);
+    transform: translate(-100%, 0);
      display: none;
 }
 .aside-menu-big{
-    transform: translate(0%);
+    position: absolute;
+    transform: translate(0%, -90px);
+    min-height: 100vh;
     display: block;
+    z-index: 200;
 }
 
 
@@ -69,12 +72,23 @@
 .iconPadding {
     padding-left: 10px;
 }
-
+.aside-menu__burger-button {
+    border: 0px;
+    background-color: transparent;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    left: 20px;
+    top: 3px;
+}
 
 @media (min-width: 700px) {
 	.aside-menu{
         max-width: 20vw;
         transform: translate(0%);
         display: block;
+    }
+    .aside-menu__burger-button{
+        display: none;
     }
 }
