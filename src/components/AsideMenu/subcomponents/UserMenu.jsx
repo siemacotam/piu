@@ -12,8 +12,6 @@ const UserMenu = ({ isUserLogged, hideMenu, isShopOpen, setIsShopOpen }) => {
         setUser(null); 
         if(!isMenuOpen){hideMenu()}
     }
-    console.log('siema')
-
     const openMenuStyles = isShopOpen ? 'aside-menu__link show' :'aside-menu__link hide'
 
     return ( 

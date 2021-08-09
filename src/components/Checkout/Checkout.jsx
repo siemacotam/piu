@@ -8,6 +8,8 @@ import Summary from './components/Summary';
 
 import './Checkout.css'
 import PaymentAndDelivery from './components/PaymentAndDelivery';
+import Bank from './components/Bank';
+import OrderReady from './components/OrderReady';
 
 
 const Checkout = () => {
@@ -50,8 +52,10 @@ const Checkout = () => {
             { user || registerOption === 2 ? orderStatus : null}
 
             <Route path='/checkout/logowanie' render={() => <LoginQuestion />}></Route>
-            <Route path='/checkout/zamowienie' render={() => <PaymentAndDelivery setStep={setStep}/>}></Route>
+            <Route path='/checkout/zamowienie' render={() => <PaymentAndDelivery setStep={setStep} />}></Route>
             <Route path='/checkout/podsumowanie' render={() => <Summary/>}></Route>
+            <Route path='/checkout/bank' render={() => <Bank/>}></Route>
+            <Route path='/checkout/ready' render={() => <OrderReady/>}></Route>
         </div>
      );
 }

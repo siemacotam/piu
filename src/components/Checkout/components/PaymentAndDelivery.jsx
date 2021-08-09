@@ -58,8 +58,14 @@ const PaymentAndDelivery = ({setStep}) => {
         if(registerOption ===2){order.user = userData}
         preorders.push(order)
         setStep(3)
-        history.push('/checkout/podsumowanie')
-    }
+        history.push({
+            pathname: '/checkout/podsumowanie',
+            state: {
+                id: orderId,
+                orderObject: order,
+            }
+    })
+}
     
     return ( 
         <div className='PaD__wrap'>

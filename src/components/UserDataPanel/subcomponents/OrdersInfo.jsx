@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { StoreContext } from '../../../store/StoreProvider';
 
 const OrdersInfo = () => {
+
+    const {user} = useContext(StoreContext)
+
     return ( 
         <div>
-            zamowienia
+            {user.orders.map(i => <p>{(i.items.map(it => it.title)) } </p> )}
         </div>
      );
 }

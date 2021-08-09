@@ -322,6 +322,8 @@ export const usersData = [
 
 export const preorders = [];
 
+export const orders = [];
+
 export const usersMessages = [];
 
 export const itemValues = {
@@ -343,6 +345,7 @@ const StoreProvider = ({children}) => {
     const [unregisteredUser, setUnregisteredUser] = useState(null);
     const [itemsFilter, setItemsFilter] = useState('')
 
+    console.log(orders, preorders)
     // const fetchData = async () => {
     //     const {data} = await  request.get('/dresses');
 
