@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/piu/static/css/main.fb47e85f.chunk.css",
-    "main.js": "/piu/static/js/main.5e0527ff.chunk.js",
-    "main.js.map": "/piu/static/js/main.5e0527ff.chunk.js.map",
+    "main.css": "/piu/static/css/main.7118a215.chunk.css",
+    "main.js": "/piu/static/js/main.1084d5ac.chunk.js",
+    "main.js.map": "/piu/static/js/main.1084d5ac.chunk.js.map",
     "runtime-main.js": "/piu/static/js/runtime-main.3cf01452.js",
     "runtime-main.js.map": "/piu/static/js/runtime-main.3cf01452.js.map",
     "static/js/2.89886233.chunk.js": "/piu/static/js/2.89886233.chunk.js",
     "static/js/2.89886233.chunk.js.map": "/piu/static/js/2.89886233.chunk.js.map",
     "index.html": "/piu/index.html",
-    "static/css/main.fb47e85f.chunk.css.map": "/piu/static/css/main.fb47e85f.chunk.css.map",
+    "static/css/main.7118a215.chunk.css.map": "/piu/static/css/main.7118a215.chunk.css.map",
     "static/js/2.89886233.chunk.js.LICENSE.txt": "/piu/static/js/2.89886233.chunk.js.LICENSE.txt",
     "static/media/angrybirdsmini.f5a1183c.jpg": "/piu/static/media/angrybirdsmini.f5a1183c.jpg",
     "static/media/batmanmini.2234c4b6.png": "/piu/static/media/batmanmini.2234c4b6.png",
-    "static/media/Home.css": "/piu/static/media/bg.408cf577.jpg",
     "static/media/diablo2mini.35d5cbfb.png": "/piu/static/media/diablo2mini.35d5cbfb.png",
     "static/media/starcraft2mini.1b09a905.png": "/piu/static/media/starcraft2mini.1b09a905.png",
     "static/media/starcraftmini.ba7d7886.png": "/piu/static/media/starcraftmini.ba7d7886.png",
@@ -23,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.3cf01452.js",
     "static/js/2.89886233.chunk.js",
-    "static/css/main.fb47e85f.chunk.css",
-    "static/js/main.5e0527ff.chunk.js"
+    "static/css/main.7118a215.chunk.css",
+    "static/js/main.1084d5ac.chunk.js"
   ]
 }
