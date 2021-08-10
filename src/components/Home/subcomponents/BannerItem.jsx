@@ -3,15 +3,15 @@ import {Link} from 'react-router-dom'
 
 const BannerItem = ({title, img, type, price,discount}) => {
     return ( 
-        <li className='item item-banner'>
-            <article className='item-card item-card-border'>
-                 <p className='item-card__head-cut'>BESTSELLER !</p>
-                <img className='item-card__image banner__img' src={img} alt ={title}/>
-                <h3 className='item-card__title'>{title}</h3>
-                <p>od {Math.round((price - price * discount )*100)/100} zł</p>
+        <li className='banner'>
+            <article className='banner__element'>
+                 <p className='banner__title'>bestseller !</p>
+                <img className='banner__img' src={img} alt ={title}/>
+                <div className='banner__info'>
+                    <h3 className='banner__game'>{title}</h3>
+                    <p>od <span className='banner__price'>{Math.round((price - price * discount )*100)/100}</span> zł</p>
+                </div>
                 <button className='banner__button'><Link to='/offer'>przedź do sklepu</Link></button>
-
-
             </article>
         </li>
      );

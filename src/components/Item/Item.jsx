@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 import { itemValues } from '../../store/StoreProvider';
 
-const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link, version}) => {
+const Item = ({img, id, isUserContext, price, title , rate, platform, distribution, language, pegi, type, discount, link, version, short}) => {
     const { user, items } = useContext(StoreContext);
 
     const { shoppingCart, setShoppingCart } = useContext(StoreContext)
@@ -64,15 +64,15 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
     return ( 
         <li className='item'>
             <article className='item-card'>
-                {type === 'new' ? <p className='item-card__head-new'>NOWOŚĆ</p> : null}
-                {type === 'cut' ? <p className='item-card__head-cut'>PROMOCJA -{discount * 100}% !</p>: null}
+                {!short && type === 'new' ? <p className='item-card__head-new'>NOWOŚĆ</p> : null}
+                {!short && type === 'cut' ? <p className='item-card__head-cut'>PROMOCJA -{discount * 100}% !</p>: null}
                 <img className='item-card__image' src={img} alt ={title}/>
                 <h3 className='item-card__title'>{title}</h3>
                 <p className='item-card__rate'>opinie</p>
-                <p>Platforma:{platform}</p>
-                <p>Dystrybucja cyfrowa:{distribution}</p>
-                <p>Wersja:{language}</p>
-                <p>PEGI:{pegi} </p>
+                <p className='item-card__text'>Platforma:{platform}</p>
+                <p className='item-card__text'>Dystrybucja cyfrowa:{distribution}</p>
+                <p className='item-card__text'>Wersja:{language}</p>
+                <p className='item-card__text'>PEGI:{pegi} </p>
                 {isUserContext && <p>{itemValues[version]}</p> }
                 {isUserContext && <button className='item-card__button' ><Link style={{textDecoration: 'none', color: 'white'}} to={link}>Play</Link></button>
 

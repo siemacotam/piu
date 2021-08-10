@@ -63,7 +63,10 @@ const Header = () => {
                 <button className='header__button' onClick={buttonFunction}><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
             </div>
             <div className='header__searchPanel'>
+                <div className='header__searchPanel-menu-wrap'>
                 <button className='header__searchPanel__button' onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <p className='header__searchPanel__text'>Menu</p>
+                </div>
                 <form className='header__form' onSubmit ={handleSubmit}>
                     <label className='header__input-wrap'>
                         <i class="fas fa-search"></i>

@@ -47,29 +47,43 @@
     border-bottom: 2px solid grey;
 }
 
+.header__searchPanel-menu-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    text-align: center;
+}
+
 .header__searchPanel__button {
     border: 0px;
-    padding-left: 40px;
     font-size: 20px;
     background-color: white;
 }
 
+.header__searchPanel__text {
+    font-size: 8px;
+    font-weight: bold;
+}
+
 .header__form {
-    padding-left: 30px;
+    margin-left: 20px;
+    border: 1px solid black;
+    /* padding: 4px; */
+    border-radius: 15px;
+    width: 70%;
 }
 
 .header__input-wrap{
-    border: 1px solid black;
-    padding: 4px;
-    border-radius: 15px;
+    padding-left: 10px;
 }
 .header__input {
-    padding: 4px;
+    padding: 6px;
+    padding-left: 10px;
     border-radius: 15px;
     border:0px;
 }
 .header__input:focus{
-    border: 0px;
     outline: none;
 }
 

@@ -1,78 +1,85 @@
-.banner__button {
-    background-color: grey;
-    border: 0px;
-    padding: 5px;
+.home-wrap {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+.home-hit{
+    flex-grow: 1;
+    border: 2px solid lightgray;
+    border-radius: 15px;
     margin-top: 10px;
-    text-transform: uppercase;
+}
+
+.home-hit__header {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.home-hit__title {
+    text-align: center;
+    font-weight: bold;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    background-color: lightgray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.home-hit__timer {
+    color: red;
+}
+
+.banner { 
+    list-style: none;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: white;
+    padding: 1px;
+}
+
+.banner__element {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .banner__title {
-    padding: 10px;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 24px;
     font-weight: bold;
-    background-color: #BCBCBC;
-    margin: 10px 0 10px -60px;
-    border-radius: 15px;
-}
-
-.item-banner {
-    border: 3px solid black;
-    background-color: white;
-
-}
-
-.item-card-border {
-    border: 0px;
-    margin: 0px;
     padding: 5px;
-}
-
-.banner__items{
-    /* position: absolute;
-    bottom: 2%;
-    left: 10%;
-    right: 10%; */
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #F0FFF0;
+    margin-bottom: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .banner__img{
     height: 60px;
+    margin: 0 auto;
 }
 
-.homeElement{
-    font-weight: bold;
-    font-size: 16px;
-}
-.homeElement:nth-child(1){
-    color: red;
-    margin-left: -10px;
+.banner__info {
+    display: flex;
+    justify-content: space-around;
     padding: 10px;
 }
-.homeElement:nth-child(2){
-    color: green;
-    padding: 10px 0 10px 60px;
-    font-size: 16px;
-    
-}
-.homeElement:nth-child(3){
-    color: #407F51;
-    font-size: 33px;
-    padding: 15px 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-.homeElement:nth-child(4){
-    width: 50%;
-    padding-top: 15px;
-    margin: 0 0 0 auto;
-    text-align: right;
-}
-.homeElement:nth-child(5){
-    padding-top: 10px;
-    font-size: 20px;
+
+.banner__price {
     font-weight: bold;
-    text-align: center;
-    padding-bottom: 25px;
+    color: green;
+}
+
+.banner__button {
+    background-color: grey;
+    border: 0px;
+    border-radius: 15px;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }

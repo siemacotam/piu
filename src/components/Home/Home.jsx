@@ -1,11 +1,36 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { StoreContext } from '../../store/StoreProvider';
+import { itemsData, StoreContext } from '../../store/StoreProvider';
 import BannerItem from './subcomponents/BannerItem';
+import Item from '../Item/Item';
 
 import './Home.css'
 
 const Home = () => {
     const[index, setIndex] = useState(0)
+    const initionalMinute=30
+    const initionalSeconds=0
+    const[minutes, setMinutes] = useState(initionalMinute);
+    const[seconds, setSeconds] =useState(initionalSeconds);
+    const [itemIndex, setItemIndex] = useState('')
+    
+    useEffect(()=>{
+        let myInterval = setInterval(()=>{
+            if(seconds > 0){
+                setSeconds(seconds - 1);
+            }
+            if(seconds === 0){
+                if(minutes === 0){
+                    clearInterval(myInterval)
+                } else {
+                    setMinutes(minutes -1);
+                    setSeconds(59)
+                }
+            }
+        }, 1000)
+        return ()=> {clearInterval(myInterval);
+        };
+    });
+
     const { items } = useContext(StoreContext);
 
     let indexStart = 0
@@ -25,21 +50,30 @@ const Home = () => {
     const itemsElements = newElements.map(item => <BannerItem key={item.id} {...item}/>)
     const itemToShow = itemsElements[index]
 
+    const findPromo = () => {
+        const chooseIndex = Math.floor(Math.random() * itemsData.length)
+        setItemIndex(chooseIndex)
+    }
+
+    useEffect(()=>{findPromo()}, [])
+
+    const searchedItem = itemsData[itemIndex]
+
     return ( 
         <div className="home-wrap">
-            <h2 className='banner__title'>Witamy w Piu Games</h2>
-            {/* <section className='home'>
-                <p className='homeElement'>Szukasz najnowszych gier ?</p>
-                <p className='homeElement'>Nie wiesz jak spędzić wolny czas ?</p>
-                <p className='homeElement'>Dobrze trafiłeś!</p>
-                <p className='homeElement'>Od 10 lat łączymy środowisko gamerskie</p>
-                <p className='homeElement'>Z nami nuda nie straszna</p>
-            </section> */}
-            <section className='items banner__items'>
-                <ul className='items__list'>
-                    {itemToShow}
-                </ul>
-            </section>
+            <ul className=''>
+                {itemToShow}
+            </ul>
+            <article className='home-hit'>
+                <p className="home-hit__title">okazja tygodnia</p>
+                <div className="home-hit__header">
+                    <p>oferta ważna jeszcze tylko</p>
+                    {minutes ===0 && seconds === 0 
+                    ? 'Czekaj na nową promocję !'
+                    : <h3 className='home-hit__timer'>{minutes} : {seconds < 10 ? `0${seconds}` : seconds} </h3>}
+                </div>
+                <Item short = {true} {...searchedItem}/>
+            </article>
         </div>
      );
 }

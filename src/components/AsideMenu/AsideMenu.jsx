@@ -29,8 +29,7 @@ const AsideMenu = () => {
             <div className="aside-menu__nav-wrapper">
 
             <button className='aside-menu__burger-button' 
-            onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
+            onClick={isMenuOpen? showMenu : hideMenu}>X</button>
 
                 <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} />
                 {adminMenuComponent}
