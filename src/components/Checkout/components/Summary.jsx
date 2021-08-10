@@ -7,11 +7,13 @@ import { useLocation } from 'react-router-dom';
 
 import './Summary.css'
 
-const Summary = () => {
+const Summary = ({setStep}) => {
     const { orderId } = useContext(StoreContext)
 
     const history = useHistory()
     const location = useLocation();
+
+    setStep(3)
 
     useEffect(()=>{window.scrollTo(0,0)},[])
 

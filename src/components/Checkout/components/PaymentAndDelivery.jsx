@@ -54,17 +54,20 @@ const PaymentAndDelivery = ({setStep}) => {
     }
 
     const handleNextStepClick = (userData) => {
-        setOrderId(prev => prev + 1)
-        if(registerOption ===2){order.user = userData}
-        preorders.push(order)
-        setStep(3)
-        history.push({
-            pathname: '/checkout/podsumowanie',
-            state: {
-                id: orderId,
-                orderObject: order,
-            }
-    })
+        if(rulesCheckbox && placeCheckbox){
+            setOrderId(prev => prev + 1)
+            if(registerOption ===2){order.user = userData}
+            preorders.push(order)
+            setStep(3)
+            history.push({
+                pathname: '/checkout/podsumowanie',
+                state: {
+                    id: orderId,
+                    orderObject: order,
+                }
+        })} else {
+            alert('uzupelnij checkboxy')
+        }
 }
     
     return ( 

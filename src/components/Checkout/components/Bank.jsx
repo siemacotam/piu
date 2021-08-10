@@ -3,13 +3,14 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { orders, preorders, StoreContext } from '../../../store/StoreProvider';
 import { usersData } from '../../../store/StoreProvider';
 
-const Bank = () => {
+const Bank = ({setStep}) => {
     const {setShoppingCart, user} = useContext(StoreContext)
 
     const location = useLocation()
     const history = useHistory()
 
     const finish = () => {
+    setStep(3.5)
     const orderId = preorders.findIndex(i => i.id === location.state.orderObject.id)
     const item = preorders[orderId];
     orders.push(item);
@@ -19,6 +20,7 @@ const Bank = () => {
         const index = usersData.findIndex(i => i.login === user.login)
         usersData[index].orders.push(item)
     }
+    setTimeout(()=>{history.push('/checkout/gotowe')},10000)
     }
 
     useEffect(() => finish(),[])

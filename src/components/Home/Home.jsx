@@ -12,6 +12,8 @@ const Home = () => {
     const[minutes, setMinutes] = useState(initionalMinute);
     const[seconds, setSeconds] =useState(initionalSeconds);
     const [itemIndex, setItemIndex] = useState('')
+
+    useEffect(()=>{window.scrollTo(0,0)},[])
     
     useEffect(()=>{
         let myInterval = setInterval(()=>{
@@ -61,9 +63,6 @@ const Home = () => {
 
     return ( 
         <div className="home-wrap">
-            <ul className=''>
-                {itemToShow}
-            </ul>
             <article className='home-hit'>
                 <p className="home-hit__title">okazja tygodnia</p>
                 <div className="home-hit__header">
@@ -74,6 +73,9 @@ const Home = () => {
                 </div>
                 <Item short = {true} {...searchedItem}/>
             </article>
+            <ul className=''>
+                {itemToShow}
+            </ul>
         </div>
      );
 }

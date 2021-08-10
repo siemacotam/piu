@@ -5,11 +5,10 @@
 .item-card {
     position: relative;
     list-style: none;
-    margin-bottom: 15px;
-    padding: 20px 10px;
+    margin-bottom: 5px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid black;
 }
 
 .item-card__head-new {
@@ -56,6 +55,7 @@
 .item-card__text {
     font-size: 14px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 2px 0;
 }
 
 .item-card__price-number {
@@ -68,7 +68,7 @@
 .item-card__button {
     position: absolute;
     right: 5%;
-    bottom: 5%;
+    bottom: 10%;
     background-color: white;
     height: 50px;
     width: 50px;
@@ -78,4 +78,8 @@
     font-size: 20px;
     color: white;
     background-color: green;
+}
+
+.item__border-bottom {
+    border-bottom: 2px solid black;
 }

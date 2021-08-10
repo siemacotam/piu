@@ -49,13 +49,13 @@ const Checkout = () => {
                 <Link to='/piu' onClick={!isMenuOpen && hideMenu}><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
                 <p className="checkout__logo-title">Dobrze Trafiłeś</p>
             </div>
-            { user || registerOption === 2 ? orderStatus : null}
+            { (user || registerOption === 2) && (step !== 3.5)? orderStatus : null}
 
             <Route path='/checkout/logowanie' render={() => <LoginQuestion />}></Route>
             <Route path='/checkout/zamowienie' render={() => <PaymentAndDelivery setStep={setStep} />}></Route>
-            <Route path='/checkout/podsumowanie' render={() => <Summary/>}></Route>
-            <Route path='/checkout/bank' render={() => <Bank/>}></Route>
-            <Route path='/checkout/ready' render={() => <OrderReady/>}></Route>
+            <Route path='/checkout/podsumowanie' render={() => <Summary setStep={setStep}/>}></Route>
+            <Route path='/checkout/bank' render={() => <Bank setStep={setStep}/>}></Route>
+            <Route path='/checkout/gotowe' render={() => <OrderReady setStep={setStep} />}></Route>
         </div>
      );
 }

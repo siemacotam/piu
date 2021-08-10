@@ -88,6 +88,8 @@ const RegisterForm = ({
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if(userName && userAdress && userPostcode && userCity && userEmail && userPhone){
         
         const newUser = {
             accessLevel: 0,
@@ -133,6 +135,9 @@ const RegisterForm = ({
             whereToGoNext()
             setChangeAdress(false)
         }
+    } else {
+        alert('uzupelnij wszystkie dane')
+    }
     }
 
     const buttonLabel = user || registerOption === 2 ? 'Zapisz' : 'Zarejestruj'
