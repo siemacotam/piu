@@ -10,22 +10,25 @@ const Bank = ({setStep}) => {
     const history = useHistory()
 
     const finish = () => {
-    setStep(3.5)
     const orderId = preorders.findIndex(i => i.id === location.state.orderObject.id)
     const item = preorders[orderId];
+
+    setStep(3.5)
     orders.push(item);
     preorders.splice(orderId, 1);
     setShoppingCart([])
     if(user){
         const index = usersData.findIndex(i => i.login === user.login)
         usersData[index].orders.push(item)
+        const itemsIndexes = item.items.map(i => i.id)
+        const newItemsList = usersData[index].items.concat(itemsIndexes)
+        usersData[index].items = newItemsList
+        console.log(usersData[index])
     }
     setTimeout(()=>{history.push('/checkout/gotowe')},10000)
     }
 
     useEffect(() => finish(),[])
-
-    console.log(orders)
 
     return ( 
         <div>
