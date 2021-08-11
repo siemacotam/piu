@@ -1,5 +1,5 @@
 .summary{
-    padding-left: 10px;
+    padding: 0 5px;
 }
 
 .summary__title {
@@ -53,7 +53,7 @@
 
 .summary__sum-up{
     background-color: lightgray;
-    margin: 30px -20px;
+    margin: 30px -15px;
     padding: 20px 0;
     border-bottom: 1px solid gray;
     border-top: 1px solid gray;

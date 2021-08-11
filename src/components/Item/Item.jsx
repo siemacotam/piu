@@ -78,7 +78,7 @@ const Item = ({img, id, isUserContext, price, title , rate, platform, distributi
 
                 }
                 {isButtonNeeded }
-                <div className="item__border-bottom"></div>
+                {!short && <div className="item__border-bottom"></div>}
 
 
 

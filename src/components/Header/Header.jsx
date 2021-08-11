@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 
 import {Link} from 'react-router-dom'
 import { StoreContext } from '../../store/StoreProvider';
-import logo from '../../images/logo2.png'
+import logo from '../../images/logo3.png'
 
 import './Header.css'
 
@@ -32,8 +32,8 @@ const Header = () => {
     }
 
     const setProperlyLabel = Boolean(user) 
-    ? <Link to='/user-account'><i class="fas fa-user-circle"></i></Link>
-    : <i class="far fa-user-circle"></i> ;
+    ? <Link to='/user-account'><i class="fas fa-user"></i></Link>
+    : <i class="far fa-user"></i> ;
 
     const handleChangeSearchedItem = (e) => {
         const item = e.target.value
@@ -55,12 +55,19 @@ const Header = () => {
     return ( 
         <header className='header'>
             <div className='header__mainPanel'>
-                <Link to='/piu'  onClick={buttonFunction} 
-                ><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
+                <Link to='/piu'  onClick={buttonFunction} ><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
                 <p className="header__title"></p>
-                <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
-                <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
-                <button className='header__button' onClick={buttonFunction}><Link to='/shopping-cart'><i className="fas fa-shopping-cart">({shoppingCart.length})</i></Link></button>
+                <div className="header__button-wrap">
+                    <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
+                    <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
+                    <p className='header__button-text'>Twoje konto</p>
+                </div>
+                <div className="header__button-wrap">
+                    <button className='header__button' onClick={buttonFunction}><Link to='/shopping-cart'>
+                        <i className="fas fa-shopping-cart"></i>
+                        <p className='header__button-number'>{shoppingCart.length}</p></Link></button>  
+                    <p className='header__button-text'>Koszyk</p>
+                </div>
             </div>
             <div className='header__searchPanel'>
                 <div className='header__searchPanel-menu-wrap'>

@@ -5,7 +5,7 @@
     width: 100%;
     background-color: #AFB2B0;
     transform: translate(-100%);
-    transition: 3.8s;
+    transition: .8s;
     position: relative;
 }
 .aside-menu-hide{
@@ -51,7 +51,6 @@
     border-radius: 30px;
 }
 
-
 .aside-menu__link:hover {
     background-color: #646564;
 }
@@ -65,8 +64,8 @@
 .show {
     transform: translate(0);
     display: block;
-    width: 60%;
-    color: black;
+    width: 70%;
+    margin: 5px auto;
 }
 
 .iconPadding {

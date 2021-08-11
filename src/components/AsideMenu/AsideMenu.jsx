@@ -15,7 +15,7 @@ const AsideMenu = () => {
     const hideMenu = () => {setIsMenuOpen(!isMenuOpen)}
     const showMenu = () => {setIsMenuOpen(!isMenuOpen)}
 
-    const sectionStyle = isMenuOpen ? 'aside-menu aside-menu-hide' : 'aside-menu aside-menu-big'
+    const sectionStyle = isMenuOpen ? 'aside-menu-hide' : 'aside-menu-big'
  
     const adminMenuComponent = user && user.accessLevel === ADMIN_TYPE
     ? <AdminMenu hideMenu={hideMenu} />
@@ -25,7 +25,7 @@ const AsideMenu = () => {
 
     return ( 
         <>
-        <section className={sectionStyle}>
+        <section className={'aside-menu ' + sectionStyle}>
             <div className="aside-menu__nav-wrapper">
 
             <button className='aside-menu__burger-button' 

@@ -5,18 +5,14 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    /* background-color: #DADADA; */
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     z-index: 10;
     background-color: white;
 }
 
 .header__mainPanel {
-    /* background-color: #DADADA; */
     display: flex;
     background-color: white;
-    /* border-bottom: 2px solid grey; */
-    /* box-shadow: 0 3px 8px rgba(0,0,0,0.1); */
     z-index: 10;
 }
 
@@ -24,20 +20,46 @@
     height: 50px;
 }
 
-.header__button {
-    background-color: #A3ACB7;
-    border: 0px;
-    border-radius: 5px;
-    margin: 10px 10px;
+.header__button-wrap {
     flex-basis: 20%;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    text-align: center;
+}
+
+.header__button {
+    height: 19px;
+    background-color: white;
+    border: 0px;
+    font-size: 17px;
+    position: relative;
+}
+
+.header__button-number {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    font-size:10px;
+    height: 15px;
+    width: 15px;
+    background-color: lightblue;
+    border-radius: 50%;
+    line-height: 15px;
+    text-align: center;
+    color: white;
+}
+
+.header__button-text {
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 2px;
 }
 
 .header__title {
     flex-grow: 1;
-}
-
-.fa-shopping-cart {
-    color: #414141;
 }
 
 .header__searchPanel {
@@ -62,23 +84,24 @@
 }
 
 .header__searchPanel__text {
-    font-size: 8px;
+    font-size: 10px;
     font-weight: bold;
 }
 
 .header__form {
     margin-left: 20px;
-    border: 1px solid black;
-    /* padding: 4px; */
+    border: 1px solid lightgray;
     border-radius: 15px;
     width: 70%;
 }
 
 .header__input-wrap{
     padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 .header__input {
-    padding: 6px;
+    padding: 5px;
     padding-left: 10px;
     border-radius: 15px;
     border:0px;
@@ -96,7 +119,7 @@
 }
 
 @media (min-width: 700px) {
-	.header__searchPanel__button{
+	.header__searchPanel-menu-wrap{
         display: none;
     }
 }
