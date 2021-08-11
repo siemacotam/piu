@@ -56,11 +56,16 @@ const Summary = ({setStep}) => {
                 </div>
                 <div className='summary__adress'>
                     <h5 className='summary__subtitle'>Dane odbiorcy:</h5>
-                    <p className='summary__subtitle-element'>{userOrder.user.nameAndSurname}</p>
-                    <p className='summary__subtitle-element'>{userOrder.user.street}</p>
-                    <p className='summary__subtitle-element'>{userOrder.user.postCode} {userOrder.user.city}</p>
-                    <p className='summary__subtitle-element'>{userOrder.user.phone}</p>
-                    <p className='summary__subtitle-element'>{userOrder.user.email}</p>
+                    <p className='summary__subtitle-element'>
+                        <span className='summary_subtitle-text'>Imie i nazwisko/nazwa firmy:</span><br />  {userOrder.user.nameAndSurname}</p>
+                    <p className='summary__subtitle-element'>
+                    <span className='summary_subtitle-text'>Adres:</span><br />  {userOrder.user.street}</p>
+                    <p className='summary__subtitle-element'>
+                    <span className='summary_subtitle-text'>Kod pocztowy i miasto:</span><br />  {userOrder.user.postCode} {userOrder.user.city}</p>
+                    <p className='summary__subtitle-element'>
+                    <span className='summary_subtitle-text'>Numer telefonu:</span><br /> {userOrder.user.phone}</p>
+                    <p className='summary__subtitle-element'>
+                    <span className='summary_subtitle-text'>Email:</span><br /> {userOrder.user.email}</p>
                     <p className='summary__subtitle-element'>Na ten adress email wyślemy klucz produnktu</p>
                 </div>
                 <h5 className='summary__subtitle'>Płatność</h5>

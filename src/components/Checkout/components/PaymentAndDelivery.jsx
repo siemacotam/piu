@@ -162,12 +162,12 @@ const PaymentAndDelivery = ({setStep}) => {
 
                     {user && !changeAdress 
                     ? <div>
-                    <p>Imię i nazwisko/ nazwa firmy :{user.nameAndSurname}</p>
-                    <p>Adres: {user.street}</p>
-                    <p>Kod pocztowy: {user.postCode}</p>
-                    <p>Miasto: {user.city}</p>
-                    <p>Email: {user.email}</p>
-                    <p>Numer telefonu: {user.phone}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Imię i nazwisko/ nazwa firmy :</span> <br />{user.nameAndSurname}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Adres:</span> <br /> {user.street}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Kod pocztowy:</span> <br /> {user.postCode}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Miasto:</span> <br /> {user.city}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Email:</span> <br /> {user.email}</p>
+                    <p className='PaD__subtitle-element' ><span className='summary_subtitle-text'>Numer telefonu:</span> <br /> {user.phone}</p>
                     <button onClick={() =>{setChangeAdress(!changeAdress); setRegisterOption(4);}}>Zmień dane do wysyłki</button>
                 </div> : null }
 

@@ -32,7 +32,12 @@
 }
 
 .summary__subtitle-element{
-    height: 1.6em;
+    height: 2.8em;
+}
+
+.summary_subtitle-text {
+    font-size: 11px;
+    display: f;
 }
 
 .summary__subtitle-element:nth-last-of-type(1) {

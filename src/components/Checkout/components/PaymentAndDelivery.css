@@ -97,6 +97,9 @@
     justify-content: space-between;
     height: 1.8em;
 }
+.PaD__subtitle-element{
+    height: 2.8em;
+}
 .PaD__summary-info:nth-of-type(3){
     border-bottom: 1px solid gray;
 }

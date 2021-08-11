@@ -45,10 +45,10 @@ const Checkout = () => {
 
     return ( 
         <div className="checkout">
-            <div className="checkout__logo-panel">
+            { step !==3.5 && <div className="checkout__logo-panel">
                 <Link to='/piu' onClick={!isMenuOpen && hideMenu}><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
                 <p className="checkout__logo-title">Dobrze Trafiłeś</p>
-            </div>
+            </div>}
             { (user || registerOption === 2) && (step !== 3.5)? orderStatus : null}
 
             <Route path='/checkout/logowanie' render={() => <LoginQuestion />}></Route>

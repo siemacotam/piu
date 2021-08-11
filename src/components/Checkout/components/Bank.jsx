@@ -1,13 +1,27 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { orders, preorders, StoreContext } from '../../../store/StoreProvider';
 import { usersData } from '../../../store/StoreProvider';
 
 const Bank = ({setStep}) => {
+    const[seconds, setSeconds] =useState(10);
     const {setShoppingCart, user} = useContext(StoreContext)
 
     const location = useLocation()
     const history = useHistory()
+
+    useEffect(()=>{
+        let myInterval = setInterval(()=>{
+            if(seconds > 0){
+                setSeconds(seconds - 1);
+            }
+            if(seconds === 0){
+                    clearInterval(myInterval)
+                } 
+        }, 1000)
+        return ()=> {clearInterval(myInterval);
+        };
+    });
 
     const finish = () => {
     const orderId = preorders.findIndex(i => i.id === location.state.orderObject.id)
@@ -37,6 +51,7 @@ const Bank = ({setStep}) => {
             <p>Tym razem Ci zaufamy i przekażemy Ci produkt bez płatności</p>
             <p>Przy następnym zamówieniu uregulujesz płatność za aktualne zamówienie :)</p>
             <p>W ciągu 10 sekund zostaniesz przeniesiony do nastepnej strony </p>
+            {seconds}
         </div>
      );
 }
