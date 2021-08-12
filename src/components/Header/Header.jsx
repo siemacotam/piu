@@ -50,36 +50,49 @@ const Header = () => {
         setSearchedItem('')
     }
 
-    const buttonFunction = !isMenuOpen ? hideMenu : null
+    const logoDiv = 
+        <Link to='/piu' ><div className='header__logo-div'><img src={logo} alt="" /> </div></Link>
+
+    const accountButton = 
+                <div onClick={handleOnClick} className="header__button-wrap">
+                    <p className='header__button'>{setProperlyLabel}</p>
+                    <p className='header__button-text'>Twoje konto</p>
+                </div>
+
+    const cartButton = 
+                 <div onClick={() => {history.push('/shopping-cart')}} className="header__button-wrap">
+                    <i className="fas fa-shopping-cart header__button"><span className='header__button-number'>{shoppingCart.length}</span></i>
+                    <p className='header__button-text'>Koszyk</p>
+                </div>
+
+    const hamburgerButton = (bigScreen) => {
+                return <div className={'header__searchPanel-menu-wrap ' + bigScreen}>
+                    <button className='header__searchPanel__button' onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i></button>
+                    <p className='header__searchPanel__text'>Menu</p>
+                </div>}
+
+    const searchForm = (bigScreen) => { 
+                return <form className={'header__form ' + bigScreen} onSubmit ={handleSubmit}>
+                    <label className='header__input-wrap'>
+                        <i class="fas fa-search"></i>
+                        <input className='header__input' type="text" placeholder='Czego szukasz?' value={searchedItem} onChange={handleChangeSearchedItem} ></input>
+                        <button className='header__search-button'><i class="fas fa-search"></i></button>
+                    </label>
+                </form> }
 
     return ( 
         <header className='header'>
             <div className='header__mainPanel'>
-                <Link to='/piu'  onClick={buttonFunction} ><div className='header__logo-wrapper'><img src={logo} alt="" /> </div></Link>
-                <p className="header__title"></p>
-                <div className="header__button-wrap">
-                    <button className='header__button' onClick={handleOnClick}>{setProperlyLabel}</button>
+                {hamburgerButton('bigScreen')}
+                {logoDiv}
+                {searchForm('bigScreen')}
+                <div className="header__buttons-panel">
+                    {accountButton}
                     <LoginForm handleOnClose={handleOnClose} isModalOpen={isModalOpen}></LoginForm>
-                    <p className='header__button-text'>Twoje konto</p>
+                    {cartButton}
                 </div>
-                <div className="header__button-wrap">
-                    <button className='header__button' onClick={buttonFunction}><Link to='/shopping-cart'>
-                        <i className="fas fa-shopping-cart"></i>
-                        <p className='header__button-number'>{shoppingCart.length}</p></Link></button>  
-                    <p className='header__button-text'>Koszyk</p>
-                </div>
-            </div>
-            <div className='header__searchPanel'>
-                <div className='header__searchPanel-menu-wrap'>
-                <button className='header__searchPanel__button' onClick={isMenuOpen? showMenu : hideMenu}><i class="fa fa-bars" aria-hidden="true"></i></button>
-                <p className='header__searchPanel__text'>Menu</p>
-                </div>
-                <form className='header__form' onSubmit ={handleSubmit}>
-                    <label className='header__input-wrap'>
-                        <i class="fas fa-search"></i>
-                        <input className='header__input' type="text" placeholder='Czego szukasz?' value={searchedItem} onChange={handleChangeSearchedItem} ></input>
-                    </label>
-                </form>
+                {hamburgerButton()}
+                {searchForm()}
             </div>
         </header>
      );

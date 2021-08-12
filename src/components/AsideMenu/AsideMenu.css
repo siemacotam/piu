@@ -14,7 +14,7 @@
 }
 .aside-menu-big{
     position: absolute;
-    transform: translate(0%, -90px);
+    transform: translate(0%, -100px);
     min-height: 100vh;
     display: block;
     z-index: 200;
