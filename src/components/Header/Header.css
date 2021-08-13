@@ -134,7 +134,7 @@
 
 @media (min-width: 321px){
     .header__buttons-panel{
-        flex-basis: 65%;
+        flex-basis: 60%;
     }
 }
 

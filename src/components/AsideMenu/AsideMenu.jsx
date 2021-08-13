@@ -23,6 +23,11 @@ const AsideMenu = () => {
 
     useEffect(()=>{setIsShopOpen(false)},[isMenuOpen])
 
+    // const showStyles = style ={{
+    //     transform: 'translate(0%, -100px)',
+    //     display: 'block',
+    //     zIndex: '200',}}
+
     return ( 
         <>
         <section className={'aside-menu ' + sectionStyle}>
@@ -31,8 +36,11 @@ const AsideMenu = () => {
             <button className='aside-menu__burger-button' 
             onClick={isMenuOpen? showMenu : hideMenu}>X</button>
 
+            <div className="siema">
                 <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} />
                 {adminMenuComponent}
+            </div>
+
             </div>
         </section>
         </>

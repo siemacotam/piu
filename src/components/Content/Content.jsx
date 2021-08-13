@@ -27,7 +27,7 @@ const Content = () => {
     const isAdmin = user && user.accessLevel === ADMIN_TYPE;
 
     return ( 
-        <main className={isMenuOpen ? 'content' : 'none'}>
+        <main className={isMenuOpen ? 'content' : 'content none'}>
             <Switch>
                 <Route exact path='/' render={() => <Home />}></Route>
                 {isUserLogged && <Route exact path='/my-items' render={() => <UserAccount />}></Route>}
