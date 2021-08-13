@@ -21,3 +21,9 @@ a {
   color: black;
   display: block;
 }
+
+@media (min-width: 1200px){
+  .content-wrapper{
+    margin-top: 130px;
+  }
+}

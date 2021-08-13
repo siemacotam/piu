@@ -25,9 +25,9 @@
     }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
 	.content {
-        width: 80%;
+        width: 80vw;
         margin: 0 0 0 auto;
     }
-}
+} */

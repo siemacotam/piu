@@ -32,6 +32,7 @@
     border-radius: 30px;
 }
 
+
 .aside-menu__link {
     width: 80%; 
     text-decoration: none;
@@ -43,10 +44,26 @@
     text-align: center;
     cursor: pointer;
     border-radius: 30px;
+    list-style: none;
 }
 
 .aside-menu__link:hover {
     background-color: #646564;
+}
+
+.aside-menu__user-nav {
+    list-style: none;
+}
+
+.user-nav-hide {
+    display: none;
+}
+.admin-nav-hide {
+    display: none;
+}
+
+.aside-menu__admin-nav {
+    list-style: none;
 }
 
 .aside-menu__offer-list{
@@ -129,7 +146,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
 	.aside-menu{
         max-width: 20vw;
         transform: translate(0%);
@@ -140,6 +157,93 @@
         width: 20vw;
     }
     .aside-menu__burger-button{
+        display: none;
+    }
+} */
+
+@media (min-width: 1200px) {
+    .aside-menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 60px;
+        min-height: 60px;
+        margin-top: 70px;
+        padding: 10px;
+        background-color: #AFB2B0;
+        transform: translate3d(0, 0, 0);
+        transition: 0.3s;
+        z-index: 200;
+        /* overflow-x: hidden; */
+    }
+    /* .aside-menu-hide{
+        transform: translate3d(0, 0, 0);
+    }
+    .aside-menu-big{
+        transform: translate3d(0, 0, 0);
+    } */
+
+    .aside-menu__nav-wrapper{
+        display: flex;
+    }
+
+    .aside-menu__offer-list{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 20vh;
+        left: 0;
+        top: 0;
+        width: 15vw;
+        margin-top: 70px;
+        padding: 10px 0;
+        background-color: #AFB2B0;
+        transform: translate3d(0, 0, 0);
+        transition: 0.3s;
+        z-index: -1;
+
+        /* display: none; */
+    }
+
+    .hide{
+        transform: translate3d(0, -100px, 0);
+        display: none;
+        /* z-index: -1; */
+    }
+    .show{
+        transform: translate3d(0, -70px, 0);
+        /* overflow: hidden; */
+        display: block;
+    }
+    
+    .aside-menu__title {
+        display: none;
+    }
+    
+    .aside-menu__link {
+        height: 30px;
+        width: 15vw; 
+        text-decoration: none;
+        margin: 10px auto;
+        padding: 3px;
+        display: block;
+        background-color: #9A9A9A;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 30px;
+    }
+    
+    .aside-menu__link:hover {
+        background-color: #646564;
+    }
+    
+    .aside-menu__burger-button {
         display: none;
     }
 }

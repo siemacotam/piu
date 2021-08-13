@@ -9,6 +9,8 @@ const ADMIN_TYPE = 1
 
 const AsideMenu = () => {
     const [isShopOpen, setIsShopOpen] = useState(false);
+    const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+    const[isAdminMenuOpen, setIsAdminMenuOpen] = useState(false);
     const { user } = useContext(StoreContext);
     const { isMenuOpen , setIsMenuOpen } = useContext(StoreContext);
 
@@ -18,10 +20,14 @@ const AsideMenu = () => {
     const sectionStyle = isMenuOpen ? 'aside-menu-hide' : 'aside-menu-big'
  
     const adminMenuComponent = user && user.accessLevel === ADMIN_TYPE
-    ? <AdminMenu hideMenu={hideMenu} />
+    ? <AdminMenu isAdminMenuOpen={isAdminMenuOpen} setIsAdminMenuOpen={setIsAdminMenuOpen} hideMenu={hideMenu} setIsUserMenuOpen={setIsUserMenuOpen} setIsShopOpen={setIsShopOpen}/>
     : null;
 
     useEffect(()=>{setIsShopOpen(false)},[isMenuOpen])
+    useEffect(()=>{setIsAdminMenuOpen(false)},[isMenuOpen])
+    useEffect(()=>{setIsUserMenuOpen(false)},[isMenuOpen])
+
+
 
     // const showStyles = style ={{
     //     transform: 'translate(0%, -100px)',
@@ -36,10 +42,10 @@ const AsideMenu = () => {
             <button className='aside-menu__burger-button' 
             onClick={isMenuOpen? showMenu : hideMenu}>X</button>
 
-            <div className="siema">
-                <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} />
+            
+                <UserMenu isShopOpen={isShopOpen} setIsShopOpen={setIsShopOpen} isUserMenuOpen={isUserMenuOpen} setIsUserMenuOpen={setIsUserMenuOpen} isUserLogged={Boolean(user)} hideMenu={hideMenu} setIsAdminMenuOpen={setIsAdminMenuOpen} />
                 {adminMenuComponent}
-            </div>
+            
 
             </div>
         </section>
