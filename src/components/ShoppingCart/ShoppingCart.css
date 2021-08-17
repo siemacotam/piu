@@ -6,6 +6,11 @@
     border-bottom: 3px solid black; 
 }
 
+.shopping-cart__info {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .shopping-cart {
     display: flex;
     flex-direction: column;

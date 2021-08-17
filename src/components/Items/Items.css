@@ -22,3 +22,9 @@
     gap: 25px;
     list-style: none;
 }
+
+@media (min-width: 1200px) {
+    .items__list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

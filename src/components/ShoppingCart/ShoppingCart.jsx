@@ -17,23 +17,6 @@ const ShoppingCart = () => {
 
     const { shoppingCart,setShoppingCart } = useContext(StoreContext)
 
-    // const userHaveItems = user? user.items.map( i => i) : ''
-    // const itemsInCart = shoppingCart.map(i => i.id)
-    // const getDiffrence = ( userHaveItems, itemsInCart) => {
-    //     return userHaveItems
-    //     .filter(x => !itemsInCart.includes(x))
-    //     .concat(itemsInCart.filter(x => !userHaveItems.includes(x)));
-    //     // setShoppingCart()
-    // }
-    // const itemsIdToShow = getDiffrence(userHaveItems, itemsInCart)
-    // const itemsIdToShow2 = itemsData.filter(i => i.id = itemsIdToShow.map(i => i))
-    // console.log( itemsIdToShow2)
-    // console.log(itemsIdToShow)
-
-    // const unloggedCart = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
-    // const loggedCart = itemsIdToShow.map(item => <CartItem key={item.id} {...item}/>)
-    // const itemsElements =  user === null ? unloggedCart : loggedCart
-
     const itemsElements = shoppingCart.map(item => <CartItem key={item.id} {...item}/>)
 
     const allItemsPrices = shoppingCart.map(item => Math.round(item.version * (item.price - item.price * item.discount ) * 100) / 100)
@@ -64,11 +47,11 @@ const ShoppingCart = () => {
                     <button className='shopping-cart__button' onClick={() => {setShoppingCart([])}}>Wyczyść koszyk</button>
                 </div> 
                 <ul className='shopping-cart'>
-                    {shoppingCart.length ===0 ? 'Koszyk jest pusty' : null}
+                    {shoppingCart.length ===0 ? <p className='shopping-cart__info'>Koszyk jest pusty</p> : null}
                     {itemsElements}
                 </ul>
             </nav>
-            {shoppingCart.length && <div className='shopping-cart__payment-panel'>
+            {shoppingCart.length > 0 && <div className='shopping-cart__payment-panel'>
                     <p>Łączna kwota:</p> <p>{(Math.round(orderSummary *100) /100).toFixed(2)} zł </p>
                     {user ? loggedButton : unloggedButton}
                 </div>}

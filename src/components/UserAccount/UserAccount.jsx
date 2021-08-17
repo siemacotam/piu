@@ -10,7 +10,7 @@ const UserAccount = () => {
 
     const buyedItems = items
     .filter( item => user.items.includes(item.id))
-    .map(item => <Item isUserContext={true} key={item.id} {...item}/>)
+    .map(item => <Item short={true} isUserContext={true} key={item.id} {...item}/>)
 
     return ( 
         <section className="user-account">
